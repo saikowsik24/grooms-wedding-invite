@@ -8,6 +8,15 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#couple">Couple</a></li>
+        <li><a href="#events">Event</a></li>
+        <li><a href="#venue">Venue</a></li>
+      </ul>
+    </nav>
+
     <div class="music-button">
       <audio id="bgMusic" autoplay loop>
         <source src="music.mp3" type="audio/mpeg">
@@ -15,7 +24,7 @@
       <button onclick="toggleMusic()">🎵</button>
     </div>
 
-    <header class="hero">
+    <header id="home" class="hero">
       <div class="logo">M❤️S</div>
       <h1>You're Invited!</h1>
       <h2>To the wedding of</h2>
@@ -25,7 +34,7 @@
       <div class="countdown" id="countdown"></div>
     </header>
 
-    <section class="couple">
+    <section id="couple" class="couple">
       <div class="image-container">
         <img src="groom-couple.jpg" alt="Manoj & Supriya">
       </div>
@@ -36,7 +45,7 @@
       </div>
     </section>
 
-    <section class="venue">
+    <section id="venue" class="venue">
       <h2>📍 Venue Details</h2>
       <div class="venue-cards">
         <div class="card">
@@ -51,7 +60,7 @@
       </div>
     </section>
 
-    <section class="events">
+    <section id="events" class="events">
       <h2>🎉 Event Details</h2>
       <div class="event-list">
         <div class="event">
@@ -93,7 +102,7 @@
 
         if (diff < 0) {
           clearInterval(timer);
-          countdownEl.innerHTML = "It's Wedding Times!";
+          countdownEl.innerHTML = "It's Wedding Time!";
           return;
         }
 
