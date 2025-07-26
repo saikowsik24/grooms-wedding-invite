@@ -3,81 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wedding Invite - Groom Side</title>
+    <title>Groom Wedding Invite</title>
+    <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar">
+      <div class="nav-logo">M❤️S</div>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#couple">Couple</a></li>
-        <li><a href="#events">Event</a></li>
+        <li><a href="#events">Events</a></li>
         <li><a href="#venue">Venue</a></li>
       </ul>
     </nav>
 
     <div class="music-button">
       <audio id="bgMusic" autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
+        <source src="music.mp3" type="audio/mpeg" />
       </audio>
       <button onclick="toggleMusic()">🎵</button>
     </div>
 
-    <header id="home" class="hero">
-      <div class="logo">M❤️S</div>
-      <h1>You're Invited!</h1>
-      <h2>To the wedding of</h2>
-      <h1 class="highlight">Manoj Kumar & Supriya</h1>
-      <p>📍 Rajdhani Gardens, Hyderabad</p>
-      <p>📅 August 18th, 2025</p>
-      <div class="countdown" id="countdown"></div>
+    <header class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="highlight">You're Invited!</h1>
+        <h2>To the Wedding of</h2>
+        <h1 class="names">Manoj Kumar & Supriya</h1>
+        <p>📍 Rajdhani Gardens, Hyderabad</p>
+        <p>📅 August 18th, 2025</p>
+        <div class="countdown" id="countdown"></div>
+      </div>
     </header>
 
-    <section id="couple" class="couple">
-      <div class="image-container">
-        <img src="groom-couple.jpg" alt="Manoj & Supriya">
-      </div>
-      <div class="details">
-        <h2>Manoj & Supriya</h2>
-        <p>Two hearts bound in joy and love. As they take the step into a new journey together, let's celebrate this beautiful union.</p>
+    <section class="couple" id="couple">
+      <h2>Meet the Couple</h2>
+      <div class="couple-container">
+        <img src="groom-couple.jpg" alt="Couple" />
+        <p>Two hearts, one love, one lifetime of happiness. Join us in celebrating our journey of togetherness.</p>
         <span>#ForeverBegins</span>
       </div>
     </section>
 
-    <section id="venue" class="venue">
-      <h2>📍 Venue Details</h2>
-      <div class="venue-cards">
-        <div class="card">
-          <h3>Wedding Hall</h3>
-          <p>Rajdhani Gardens,<br>Chaitanyapuri, Hyderabad, Telangana</p>
-          <a href="https://maps.google.com" target="_blank">View on Google Maps</a>
+    <section class="events" id="events">
+      <h2>Event Details</h2>
+      <div class="event-list">
+        <div class="event">
+          <h4>Haldi Ceremony</h4>
+          <p>Aug 15, 2025 - 10:00 AM<br>Vaibhav's Residence</p>
         </div>
-        <div class="card">
-          <h3>Date & Time</h3>
-          <p>Monday, August 18, 2025<br>Muhurtham: 03:19 AM</p>
+        <div class="event">
+          <h4>Sangeet Night</h4>
+          <p>Aug 17, 2025 - 7:00 PM<br>Rajdhani Gardens</p>
+        </div>
+        <div class="event">
+          <h4>Reception & Dinner</h4>
+          <p>Aug 17, 2025 - 7:00 PM<br>Rajdhani Gardens</p>
+        </div>
+        <div class="event">
+          <h4>Wedding Ceremony</h4>
+          <p>Aug 18, 2025 - 3:19 AM<br>Rajdhani Gardens</p>
         </div>
       </div>
     </section>
 
-    <section id="events" class="events">
-      <h2>🎉 Event Details</h2>
-      <div class="event-list">
-        <div class="event">
-          <h4>Haldi Ceremony</h4>
-          <p>August 15, 2025 - 10:00 AM<br>Vaibhav's Residence</p>
+    <section class="venue" id="venue">
+      <h2>Venue</h2>
+      <div class="venue-cards">
+        <div class="card">
+          <h3>Location</h3>
+          <p>Rajdhani Gardens,<br>Chaitanyapuri, Hyderabad</p>
+          <a href="https://maps.google.com" target="_blank">View Map</a>
         </div>
-        <div class="event">
-          <h4>Sangeet Night</h4>
-          <p>August 17, 2025 - 7:00 PM<br>Rajdhani Gardens</p>
-        </div>
-        <div class="event">
-          <h4>Reception & Dinner</h4>
-          <p>August 17, 2025 - 7:00 PM<br>Rajdhani Gardens, Hyderabad</p>
-        </div>
-        <div class="event">
-          <h4>Wedding Ceremony</h4>
-          <p>August 18, 2025 - 03:19 AM<br>Rajdhani Gardens</p>
+        <div class="card">
+          <h3>Date & Time</h3>
+          <p>Monday, August 18, 2025<br>Muhurtham: 03:19 AM</p>
         </div>
       </div>
     </section>
@@ -93,7 +93,6 @@
         else music.pause();
       }
 
-      // Countdown Timer
       const countdownEl = document.getElementById("countdown");
       const targetDate = new Date("2025-08-18T03:19:00").getTime();
       const timer = setInterval(() => {

@@ -1,64 +1,169 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: linear-gradient(to right, #e0f2f1, #f1f8e9);
-  color: #333;
-  text-align: center;
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: #1b263b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: gold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: gold;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f1c40f;
 }
 
 .hero {
-  padding: 3rem;
-  background: #004d40;
-  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  background: url('wedding-bg.jpg') center/cover no-repeat;
+  position: relative;
+  color: #fff;
 }
 
-.logo {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 27, 42, 0.7);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .highlight {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #ffeb3b;
+  font-size: 3rem;
+  color: gold;
 }
 
-.couple, .venue, .events {
-  margin: 2rem auto;
-  padding: 1rem;
-  max-width: 900px;
-}
-
-.image-container img {
-  width: 300px;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.venue-cards, .event-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.card, .event {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 250px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.names {
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
 .music-button {
   position: fixed;
-  bottom: 20px;
   right: 20px;
+  bottom: 20px;
+  z-index: 1001;
+}
+
+.music-button button {
+  font-size: 24px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 50%;
+  background: gold;
+  color: #0d1b2a;
+  cursor: pointer;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: gold;
+  margin-bottom: 1rem;
+}
+
+.couple-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.couple-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px gold;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.event {
+  background: #32475b;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid gold;
+}
+
+.venue-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #32475b;
+  border: 1px solid gold;
+  padding: 1rem;
+  width: 280px;
+  border-radius: 8px;
+}
+
+.card a {
+  color: #f1c40f;
+  text-decoration: underline;
 }
 
 footer {
-  padding: 2rem;
-  background: #004d40;
-  color: white;
+  background-color: #0d1b2a;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.countdown {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #ffd700;
 }
