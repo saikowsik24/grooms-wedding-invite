@@ -217,9 +217,11 @@ h2 {
 }
 
 .card a {
-  color: #e91e63;
-  text-decoration: underline;
-  font-weight: 500;
+  display: inline-block;
+  margin-top: 8px;
+  color: #d35400;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .guests {
