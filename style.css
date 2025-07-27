@@ -76,10 +76,12 @@ h1, h2, h3, .nav-logo, .highlight {
 .hero {
   text-align: center;
   padding: 100px 20px;
+  text-align: center;
   background: url('wedding-bg.jpg') center/cover no-repeat;
   background-attachment: fixed;
   position: relative;
   color: #fff;
+  overflow: hidden;
 }
 
 .hero::after {
@@ -95,7 +97,7 @@ h1, h2, h3, .nav-logo, .highlight {
 .hero-content {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .highlight {
@@ -105,9 +107,12 @@ h1, h2, h3, .nav-logo, .highlight {
 }
 
 .names {
+  font-family: 'Great Vibes', cursive;
   color: #ffb6c1;
-  font-size: 2rem;
-  margin: 0.5rem 0;
+  font-size: 2.5rem;
+  margin: 10px 0;
+  display: block;
+  z-index: 3;
 }
 
 .bride {
