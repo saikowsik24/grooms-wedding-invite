@@ -6,10 +6,14 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to bottom, #0d1b2a, #1b263b);
-  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom, #fef6f0, #fdecef);
+  color: #333;
   scroll-behavior: smooth;
+}
+
+h1, h2, h3, .nav-logo, .highlight {
+  font-family: 'Cormorant Garamond', serif;
 }
 
 #particles-js {
@@ -21,7 +25,7 @@ body {
 }
 
 .navbar {
-  background-color: #1b263b;
+  background-color: #fff0f5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,13 +38,14 @@ body {
 .nav-logo {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
-  color: gold;
+  color: #e91e63;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px #000;
+  white-space: nowrap;
 }
 
 .nav-logo i {
-  color: gold;
+  color: #e91e63;
   margin-right: 8px;
 }
 
@@ -52,13 +57,13 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: gold;
+  color: #e91e63;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #f1c40f;
+  color: #f06292;
 }
 
 .hero {
@@ -75,7 +80,7 @@ body {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(13, 27, 42, 0.7);
+  background: rgba(13, 27, 42, 0.4);
   z-index: 0;
 }
 
@@ -87,7 +92,7 @@ body {
 .highlight {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
-  color: gold;
+  color: #e91e63;
 }
 
 .names {
@@ -119,22 +124,22 @@ body {
   padding: 8px 12px;
   border: none;
   border-radius: 50%;
-  background: gold;
-  color: #0d1b2a;
+  background: #e91e63;
+  color: white;
   cursor: pointer;
-}
-
-.music-button button.playing {
-  background: #0d1b2a;
-  color: gold;
-  box-shadow: 0 0 10px gold;
-  transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
+.music-button button.playing {
+  background: white;
+  color: #e91e63;
+  box-shadow: 0 0 10px #e91e63;
+  transform: scale(1.1);
+}
+
 .music-button button:not(.playing) {
-  background: gold;
-  color: #0d1b2a;
+  background: #e91e63;
+  color: white;
   transform: scale(1);
 }
 
@@ -145,7 +150,7 @@ section {
 
 h2 {
   font-size: 2rem;
-  color: gold;
+  color: #e91e63;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
 }
@@ -159,7 +164,7 @@ h2 {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1rem;
-  box-shadow: 0 0 10px gold;
+  box-shadow: 0 0 10px #e91e63;
 }
 
 .event-list {
@@ -169,10 +174,17 @@ h2 {
 }
 
 .event {
-  background: #32475b;
+  background: #fff8fb;
   padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid gold;
+  border-radius: 10px;
+  border: 1px solid #ffcad4;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(255, 202, 212, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.event:hover {
+  transform: translateY(-5px);
 }
 
 .venue-cards {
@@ -184,22 +196,30 @@ h2 {
 }
 
 .card {
-  background: #32475b;
-  border: 1px solid gold;
+  background: #fff8fb;
+  border: 1px solid #ffcad4;
   padding: 1rem;
   width: 280px;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 202, 212, 0.3);
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card a {
-  color: #f1c40f;
+  color: #e91e63;
   text-decoration: underline;
+  font-weight: 500;
 }
 
 .guests {
   background: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid gold;
-  border-bottom: 1px solid gold;
+  border-top: 1px solid #e91e63;
+  border-bottom: 1px solid #e91e63;
   padding: 60px 20px;
   text-align: center;
 }
@@ -207,14 +227,14 @@ h2 {
 .guests h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
-  color: gold;
+  color: #e91e63;
   margin-bottom: 1rem;
 }
 
 .guest-subtitle {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #ddd;
+  color: #555;
 }
 
 .guest-boxes {
@@ -251,15 +271,52 @@ h2 {
 }
 
 footer {
-  background-color: #0d1b2a;
-  color: #aaa;
+  background-color: #fdecef;
+  color: #555;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
 }
 
-.countdown {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #ffd700;
+.countdown-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.count-title {
+  font-size: 1.8rem;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1rem;
+  color: #c0392b;
+}
+
+.countdown-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.count-box {
+  background: #fff0f5;
+  border: 2px solid #ffc0cb;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  min-width: 80px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.count-box span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c0392b;
+  display: block;
+}
+
+.count-box label {
+  font-size: 0.9rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0.3rem;
+  display: block;
+  color: #555;
 }
