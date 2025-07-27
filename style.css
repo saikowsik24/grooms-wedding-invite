@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background: linear-gradient(to bottom, #0d1b2a, #1b263b);
   color: #fff;
   scroll-behavior: smooth;
@@ -33,8 +33,15 @@ body {
 
 .nav-logo {
   font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: gold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.nav-logo i {
+  color: gold;
+  margin-right: 8px;
 }
 
 .navbar ul {
@@ -88,6 +95,18 @@ body {
   margin: 0.5rem 0;
 }
 
+.bride {
+  color: #ffb6c1;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+}
+
+.groom {
+  color: #87cefa;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+}
+
 .music-button {
   position: fixed;
   right: 20px;
@@ -114,6 +133,7 @@ h2 {
   font-size: 2rem;
   color: gold;
   margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
 }
 
 .couple-container {
