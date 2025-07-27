@@ -49,16 +49,15 @@
     </header>
 
     <section class="couple" id="couple">
-    <h2>Meet the Couple</h2>
+      <h2>Meet the Couple</h2>
 
-    <div class="photo-slider">
-      <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>   
-      <img id="slider-image" src="photo1.jpg" alt="Groom and Bride">
-      <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
-    </div>
+      <div class="scroll-photos">
+        <img src="Photo.jpg" alt="Groom and Bride" />
+        <img src="Photo.jpg" alt="Together Forever" />
+      </div>
 
-    <p class="love-message">💞 Hand in hand, with hearts entwined — we’re writing the first chapter of forever. Celebrate it with us. 💞</p>
-  </section>
+      <p class="love-message">💞 Hand in hand, with hearts entwined — we’re writing the first chapter of forever. Celebrate it with us. 💞</p>
+    </section>
 
 
     <section class="events" id="events">
@@ -259,15 +258,5 @@
     retina_detect: true
   });
 </script>
-  <script>
-  const images = ["photo1.jpg", "photo2.jpg"]; // Replace with your actual image names
-  let current = 0;
-
-  function changeSlide(step) {
-    current = (current + step + images.length) % images.length;
-    document.getElementById("slider-image").src = images[current];
-  }
-</script>
-
   </body>
 </html>
