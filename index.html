@@ -25,7 +25,7 @@
         <source src="music.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <button disabled title="Music is playing automatically">🔊</button>
+      <button title="Click to unmute music">🔇</button>
     </div>
 
 
@@ -140,23 +140,38 @@
       const music = document.getElementById("bgMusic");
       const btn = document.querySelector(".music-button button");
 
-      // Try to unmute and play
-      music.muted = false;
+      // Start muted due to browser restrictions
+      music.muted = true;
       const playPromise = music.play();
 
       if (playPromise !== undefined) {
-        playPromise.then(() => {
-          console.log("Music is playing");
-        }).catch((err) => {
-          console.warn("Autoplay failed:", err);
-        });
+        playPromise
+          .then(() => console.log("Music autoplay started (muted)"))
+          .catch((err) => console.warn("Autoplay blocked:", err));
       }
 
-      // Show that music is playing
-      btn.textContent = "🔊";
-      btn.classList.add("playing");
-      btn.disabled = true;
+      // Initial button state
+      btn.textContent = "🔇";
+      btn.classList.remove("playing");
+      btn.disabled = false;
       btn.style.opacity = "1";
+
+      // Click to unmute and visually update the button
+      btn.addEventListener("click", () => {
+        music.muted = false;
+        music.play()
+          .then(() => {
+            console.log("Music unmuted and playing");
+          })
+          .catch((err) => {
+            console.warn("Playback error:", err);
+          });
+
+        btn.textContent = "🔊";
+        btn.classList.add("playing");
+        btn.disabled = true; // Optional: disable button after playing
+        btn.title = "Music is playing";
+      });
     });
 
 
