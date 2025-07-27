@@ -21,7 +21,7 @@
     </nav>
 
     <div class="music-button">
-      <audio id="bgMusic" autoplay loop>
+      <audio id="bgMusic" autoplay loop muted>
         <source src="music.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
@@ -140,19 +140,25 @@
       const music = document.getElementById("bgMusic");
       const btn = document.querySelector(".music-button button");
 
-      music.play().then(() => {
-        console.log("Music is playing automatically");
-      }).catch((err) => {
-        console.warn("Autoplay failed, will need user interaction", err);
-      });
+      // Try to unmute and play
+      music.muted = false;
+      const playPromise = music.play();
 
-      // Update button style to show music is playing
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log("Music is playing");
+        }).catch((err) => {
+          console.warn("Autoplay failed:", err);
+        });
+      }
+
+      // Show that music is playing
       btn.textContent = "🔊";
       btn.classList.add("playing");
       btn.disabled = true;
-      btn.style.opacity = "0.6";
-      btn.style.cursor = "default";
-      });
+      btn.style.opacity = "1";
+    });
+
 
     const targetDate = new Date("2025-08-18T03:19:00").getTime();
     const daysEl = document.getElementById("days");
