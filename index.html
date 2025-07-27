@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Groom Wedding Invite</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div id="particles-js"></div>
     <nav class="navbar">
       <div class="nav-logo">M❤️S</div>
       <ul>
@@ -113,5 +115,51 @@
         countdownEl.innerHTML = `${days} Days ${hours} Hours ${mins} Minutes ${secs} Seconds`;
       }, 1000);
     </script>
+    <script>
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 40,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      color: {
+        value: "#FFD700"
+      },
+      shape: {
+        type: "circle",
+      },
+      opacity: {
+        value: 0.6,
+        random: true
+      },
+      size: {
+        value: 6,
+        random: true
+      },
+      move: {
+        enable: true,
+        speed: 1.5,
+        direction: "top",
+        out_mode: "out"
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: false
+        },
+        onclick: {
+          enable: false
+        },
+        resize: true
+      }
+    },
+    retina_detect: true
+  });
+</script>
   </body>
 </html>
