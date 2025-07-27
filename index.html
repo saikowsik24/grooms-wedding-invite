@@ -6,7 +6,7 @@
     <title>Groom Wedding Invite</title>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="particles-js"></div>
@@ -23,9 +23,11 @@
     <div class="music-button">
       <audio id="bgMusic" autoplay loop>
         <source src="music.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
-      <button onclick="toggleMusic()">🎵</button>
+      <button disabled title="Music is playing automatically">🔊</button>
     </div>
+
 
     <header class="hero" id="home">
       <div class="hero-content">
@@ -123,42 +125,41 @@
     </footer>
 
     <script>
-      function toggleMusic() {
-        const music = document.getElementById("bgMusic");
-        const btn = document.querySelector(".music-button button");
-
-        if (music.paused) {
-          music.play();
-          btn.textContent = "🔊"; // Playing state
-          btn.classList.add("playing");
-        } else {
-          music.pause();
-          btn.textContent = "🔇"; // Muted state
-          btn.classList.remove("playing");
-        }
-      }
+      
 
       window.addEventListener("DOMContentLoaded", () => {
-        const music = document.getElementById("bgMusic");
-        const btn = document.querySelector(".music-button button");
-        if (!music.paused) {
-          btn.textContent = "🔊";
-          btn.classList.add("playing");
-        } else {
-          btn.textContent = "🔇";
-          btn.classList.remove("playing");
-        }
+      const music = document.getElementById("bgMusic");
+      const btn = document.querySelector(".music-button button");
+
+      music.play().then(() => {
+        console.log("Music is playing automatically");
+      }).catch((err) => {
+        console.warn("Autoplay failed, will need user interaction", err);
       });
 
-    const countdownEl = document.getElementById("countdown");
-    const targetDate = new Date("2025-08-17T03:19:00").getTime();
-    const timer = setInterval(() => {
+      // Update button style to show music is playing
+      btn.textContent = "🔊";
+      btn.classList.add("playing");
+      btn.disabled = true;
+      btn.style.opacity = "0.6";
+      btn.style.cursor = "default";
+      });
+
+    const targetDate = new Date("2025-08-18T03:19:00").getTime();
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minsEl = document.getElementById("minutes");
+    const secsEl = document.getElementById("seconds");
+
+    function updateCountdown() {
       const now = new Date().getTime();
       const diff = targetDate - now;
 
-      if (diff < 0) {
-        clearInterval(timer);
-        countdownEl.innerHTML = "It's Wedding Time!";
+      if (diff <= 0) {
+        daysEl.textContent = "0";
+        hoursEl.textContent = "0";
+        minsEl.textContent = "0";
+        secsEl.textContent = "0";
         return;
       }
 
@@ -167,8 +168,14 @@
       const mins = Math.floor((diff / 1000 / 60) % 60);
       const secs = Math.floor((diff / 1000) % 60);
 
-      countdownEl.innerHTML = `${days} Days ${hours} Hours ${mins} Minutes ${secs} Seconds`;
-    }, 1000);
+      daysEl.textContent = days;
+      hoursEl.textContent = hours;
+      minsEl.textContent = mins;
+      secsEl.textContent = secs;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
       
     </script>

@@ -6,10 +6,16 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to bottom, #fef6f0, #fdecef);
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to top left, #fffaf0, #fef9f7);
   color: #333;
   scroll-behavior: smooth;
+
+  /* Font smoothing enhancements */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+   
 }
 
 h1, h2, h3, .nav-logo, .highlight {
@@ -149,10 +155,10 @@ section {
 }
 
 h2 {
-  font-size: 2rem;
-  color: #e91e63;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #b85c5c;
   margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
 }
 
 .couple-container {
@@ -174,12 +180,12 @@ h2 {
 }
 
 .event {
-  background: #fff8fb;
-  padding: 1rem;
-  border-radius: 10px;
+  background: linear-gradient(to bottom right, #fff6e5, #ffe3ec);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
   border: 1px solid #ffcad4;
   color: #333;
-  box-shadow: 0 4px 10px rgba(255, 202, 212, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -198,9 +204,9 @@ h2 {
 .card {
   background: #fff8fb;
   border: 1px solid #ffcad4;
-  padding: 1rem;
+  padding: 1.5rem;
   width: 280px;
-  border-radius: 10px;
+  border-radius: 16px;
   box-shadow: 0 4px 10px rgba(255, 202, 212, 0.3);
   transition: transform 0.3s ease;
   color: #333;
