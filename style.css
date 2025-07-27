@@ -124,6 +124,20 @@ body {
   cursor: pointer;
 }
 
+.music-button button.playing {
+  background: #0d1b2a;
+  color: gold;
+  box-shadow: 0 0 10px gold;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.music-button button:not(.playing) {
+  background: gold;
+  color: #0d1b2a;
+  transform: scale(1);
+}
+
 section {
   padding: 60px 20px;
   text-align: center;
@@ -180,6 +194,60 @@ h2 {
 .card a {
   color: #f1c40f;
   text-decoration: underline;
+}
+
+.guests {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid gold;
+  border-bottom: 1px solid gold;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.guests h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: gold;
+  margin-bottom: 1rem;
+}
+
+.guest-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.guest-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.guest-card {
+  background: #f9f9f9;
+  color: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.guest-card h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #c0392b;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.guest-card ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.icon {
+  margin-right: 6px;
 }
 
 footer {

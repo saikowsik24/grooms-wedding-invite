@@ -48,23 +48,23 @@
     </section>
 
     <section class="events" id="events">
-      <h2>Event Details</h2>
+      <h2>🎉 Event Details</h2>
       <div class="event-list">
         <div class="event">
-          <h4>Haldi Ceremony</h4>
+          <h4>🌸 Haldi Ceremony</h4>
           <p>Aug 15, 2025 - 10:00 AM<br>Medasaniramakotaya nilayam</p>
           <a href="https://www.google.com/maps/place/Medasaniramakotaya+nilayam/@16.4735994,80.6984561,17z/data=!3m1!4b1!4m6!3m5!1s0x3a35fb003629d11d:0xe65bd8c1f3cc0429!8m2!3d16.4735994!4d80.6984561!16s%2Fg%2F11ld53s7ng?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">View Location</a>
         </div>
         <div class="event">
-          <h4>Sangeet Night</h4>
+          <h4>💃🥁 Sangeet Night</h4>
           <p>Aug 17, 2025 - 7:00 PM<br>Rajdhani Gardens</p>
         </div>
         <div class="event">
-          <h4>Reception & Dinner</h4>
+          <h4>🍽 Reception & Dinner</h4>
           <p>Aug 17, 2025 - 7:00 PM<br>Rajdhani Gardens</p>
         </div>
         <div class="event">
-          <h4>Wedding Ceremony</h4>
+          <h4>💍 Wedding Ceremony</h4>
           <p>Aug 18, 2025 - 3:19 AM<br>Rajdhani Gardens</p>
         </div>
       </div>
@@ -84,6 +84,31 @@
         </div>
       </div>
     </section>
+    <section class="guests" id="guests">
+  <h2><span class="icon">🎀</span> Our Special Guests</h2>
+  <p class="guest-subtitle">
+    We are blessed to celebrate with those closest to our hearts.
+  </p>
+
+  <div class="guest-boxes">
+    <div class="guest-card">
+      <h3><span class="icon">💖</span> Groom’s Family</h3>
+      <ul>
+        <li>Mr. & Mrs. Ramesh</li>
+        <li>Cousin Arjun</li>
+        <li>Grandpa Sitaram</li>
+      </ul>
+    </div>
+    <div class="guest-card">
+      <h3><span class="icon">💖</span> Bride’s Family</h3>
+      <ul>
+        <li>Mr. & Mrs. Lakshmi</li>
+        <li>Uncle Rajesh</li>
+        <li>Aunt Kavitha</li>
+      </ul>
+    </div>
+  </div>
+   </section>
 
     <footer>
       <p>With love, Groom's Side ❤️</p>
@@ -92,9 +117,31 @@
     <script>
       function toggleMusic() {
         const music = document.getElementById("bgMusic");
-        if (music.paused) music.play();
-        else music.pause();
+        const btn = document.querySelector(".music-button button");
+
+        if (music.paused) {
+          music.play();
+          btn.textContent = "🔊"; // Playing state
+          btn.classList.add("playing");
+        } else {
+          music.pause();
+          btn.textContent = "🔇"; // Muted state
+          btn.classList.remove("playing");
+        }
       }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const music = document.getElementById("bgMusic");
+        const btn = document.querySelector(".music-button button");
+        if (!music.paused) {
+          btn.textContent = "🔊";
+          btn.classList.add("playing");
+        } else {
+          btn.textContent = "🔇";
+          btn.classList.remove("playing");
+        }
+      });
+
 
       const countdownEl = document.getElementById("countdown");
       const targetDate = new Date("2025-08-17T03:19:00").getTime();
