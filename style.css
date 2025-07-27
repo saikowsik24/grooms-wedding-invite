@@ -1,4 +1,4 @@
-/* style.css */
+/* Cleaned and optimized style.css */
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +10,9 @@ body {
   background: linear-gradient(to top left, #ffe4e1, #fff0f5);
   color: #333;
   scroll-behavior: smooth;
-
-  /* Font smoothing enhancements */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smooth: always;
-   
 }
 
 h1, h2, h3, .nav-logo, .highlight {
@@ -39,6 +36,8 @@ h1, h2, h3, .nav-logo, .highlight {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* optional for better wrapping on smaller screens */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* optional soft shadow */
 }
 
 .nav-logo {
@@ -48,11 +47,6 @@ h1, h2, h3, .nav-logo, .highlight {
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px #000;
   white-space: nowrap;
-}
-
-.nav-logo i {
-  color: #e91e63;
-  margin-right: 8px;
 }
 
 .navbar ul {
@@ -69,19 +63,17 @@ h1, h2, h3, .nav-logo, .highlight {
 }
 
 .navbar a:hover {
-  color: #c2185b; /* Bright rose on hover */
+  color: #c2185b;
   text-decoration: underline;
 }
 
 .hero {
   text-align: center;
   padding: 100px 20px;
-  text-align: center;
   background: url('wedding-bg.jpg') center/cover no-repeat;
   background-attachment: fixed;
   position: relative;
   color: #fff;
-  overflow: hidden;
 }
 
 .hero::after {
@@ -90,14 +82,14 @@ h1, h2, h3, .nav-logo, .highlight {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 240, 245, 0.3); /* soft blush pink overlay */
+  background-color: rgba(255, 240, 245, 0.3);
   z-index: 0;
 }
 
 .hero-content {
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   position: relative;
   z-index: 2;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
 .highlight {
@@ -113,22 +105,8 @@ h1, h2, h3, .nav-logo, .highlight {
   font-size: 2.5rem;
   margin: 10px 0;
   display: block;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   z-index: 3;
-}
-
-.bride {
-  color: #c2185b; /* slightly deeper pink */
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-.groom {
-  color: #2196f3;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .music-button {
@@ -148,33 +126,23 @@ h1, h2, h3, .nav-logo, .highlight {
   transition: all 0.3s ease;
 }
 
-
 .music-button button.playing {
-  background: #ff4081; /* Brighter pink */
+  background: #ff4081;
   color: white;
   box-shadow: 0 0 12px #ff80ab;
   transform: scale(1.1);
-  opacity: 1; /* Remove dimming */
 }
 
 @media (max-width: 600px) {
-  .nav-logo {
-    font-size: 2rem;
-  }
-
-  .highlight {
-    font-size: 2.2rem;
-  }
-
-  .bride, .groom {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
+  .nav-logo { font-size: 2rem; }
+  .highlight { font-size: 2.2rem; }
+  .names { font-size: 2rem; }
+  h2 { font-size: 2rem; }
+  .love-message { font-size: 1.2rem; padding: 10px; }
+  .slider-buttons button { font-size: 0.9rem; padding: 8px 14px; }
+  .card { width: 100%; padding: 1.2rem; }
+  .scroll-photos img { height: 260px; }
 }
-
 
 section {
   padding: 60px 20px;
@@ -186,18 +154,6 @@ h2 {
   font-size: 2.5rem;
   color: #b85c5c;
   margin-bottom: 1rem;
-}
-
-.couple-container {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.couple-container img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 10px #e91e63;
 }
 
 .event-list {
@@ -229,12 +185,12 @@ h2 {
 }
 
 .card {
-  background: #fff8fb;
-  border: 1px solid #ffcad4;
+  background: #fff0f5;
+  border: 1px solid #f8bbd0;
   padding: 1.5rem;
   width: 280px;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(255, 202, 212, 0.3);
+  box-shadow: 0 4px 10px rgba(248, 187, 208, 0.4);
   transition: transform 0.3s ease;
   color: #333;
 }
@@ -251,121 +207,10 @@ h2 {
   text-decoration: none;
 }
 
-.guests {
-  background: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid #e91e63;
-  border-bottom: 1px solid #e91e63;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.guests h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #e91e63;
-  margin-bottom: 1rem;
-}
-
-.guest-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-
-.guest-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.guest-card {
-  background: #f9f9f9;
-  color: #222;
-  padding: 1.5rem;
-  border-radius: 12px;
-  width: 280px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
-
-.guest-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
-}
-
-
-.guest-card h3 {
-  font-family: 'Great Vibes', cursive;
-  color: #c0392b;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.guest-card ul {
-  list-style: disc;
-  padding-left: 1.2rem;
-}
-
-.icon {
-  margin-right: 6px;
-}
-
-footer {
-  background-color: #fdecef;
-  color: #555;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-.countdown-wrapper {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.count-title {
-  font-size: 1.8rem;
-  font-family: 'Cormorant Garamond', serif;
-  margin-bottom: 1rem;
-  color: #c0392b;
-}
-
-.countdown-boxes {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.count-box {
-  background: #fff0f5;
-  border: 2px solid #ffc0cb;
-  padding: 1rem 1.2rem;
-  border-radius: 12px;
-  min-width: 80px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.count-box span {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #c0392b;
-  display: block;
-}
-
-.count-box label {
-  font-size: 0.9rem;
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 0.3rem;
-  display: block;
-  color: #555;
-}
-
-/* Scrollable photo strip */
 .scroll-photos {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 20px;
   padding: 20px;
   scroll-behavior: smooth;
@@ -385,18 +230,52 @@ footer {
   transform: scale(1.05);
 }
 
-/* Romantic message */
 .love-message {
   text-align: center;
   font-family: 'Great Vibes', cursive;
   font-size: 1.6rem;
-  color: #c2185b; /* Deep rose pink */
+  color: #c2185b;
   margin: 20px;
   line-height: 1.5;
   background: linear-gradient(45deg, #fff0f6, #ffe3e3);
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.slider-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.slider-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.slider-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slider-buttons button {
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s ease;
+}
+
+.slider-buttons button:hover {
+  background: #c2185b;
 }
 
 
