@@ -63,13 +63,13 @@ h1, h2, h3, .nav-logo, .highlight {
 
 .navbar a {
   text-decoration: none;
-  color: #e91e63;
+  color: #8b2c4a;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #f06292;
+  color: #c2185b; /* Bright rose on hover */
   text-decoration: underline;
 }
 
@@ -361,6 +361,44 @@ footer {
   display: block;
   color: #555;
 }
+
+/* Scrollable photo strip */
+.scroll-photos {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+}
+
+.scroll-photos img {
+  height: 320px;
+  border-radius: 16px;
+  scroll-snap-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.scroll-photos img:hover {
+  transform: scale(1.05);
+}
+
+/* Romantic message */
+.love-message {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  color: #c2185b; /* Deep rose pink */
+  margin: 20px;
+  line-height: 1.5;
+  background: linear-gradient(45deg, #fff0f6, #ffe3e3);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
 
 button:focus {
   outline: 2px dashed #e91e63;
