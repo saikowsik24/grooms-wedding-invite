@@ -41,7 +41,7 @@ h3 {
 }
 
 .navbar {
-  background-color: #fff0f5;
+  background-color: #c2185b;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -410,7 +410,7 @@ h2 {
 }
 
 footer {
-  background-color: #fdecef;
+  background-color: #c2185b;
   color: #555;
   text-align: center;
   padding: 1.5rem;
