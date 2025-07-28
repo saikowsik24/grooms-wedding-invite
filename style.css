@@ -36,10 +36,6 @@ h3 {
   z-index: -1;
 }
 
-#particles-js canvas {
-  filter: sepia(20%) saturate(70%) hue-rotate(320deg) brightness(100%) contrast(90%);
-}
-
 .navbar {
   background-color: #f09cb5;
   display: flex;
@@ -99,7 +95,6 @@ h3 {
   .navbar {
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
     padding: 1rem;
   }
   .nav-logo {
