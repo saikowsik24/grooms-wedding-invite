@@ -98,8 +98,8 @@ h3 {
 @media (max-width: 600px) {
   .navbar {
     flex-direction: row;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
     padding: 1rem;
   }
   .nav-logo {
