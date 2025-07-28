@@ -45,7 +45,7 @@ h1, h2, h3, .highlight {
 }
 
 .nav-logo {
-  font-family: 'Geist', sans-serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
   color: #e91e63;
   letter-spacing: 2px;
@@ -53,14 +53,20 @@ h1, h2, h3, .highlight {
   white-space: nowrap;
 }
 
-.nav-logo i {
+.initials {
+  font-size: 2.5rem;
+}
+
+/* .nav-logo i {
   color: #e91e63;
   margin-right: 8px;
-}
+} */
 
 .love-symbol {
   font-size: 2rem; /* adjust the size to match the text */
   vertical-align: middle; /* center the symbol vertically */
+  margin: 0 10px;
+  color: #e91e63;
 }
 
 .navbar ul {
