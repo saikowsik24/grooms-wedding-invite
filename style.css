@@ -129,7 +129,7 @@ h1, h2, h3, .nav-logo, .highlight {
   font-family: 'Lobster', cursive;
   font-size: 3rem;
   color: #c2185b;
-  font-weight: normal;
+  font-weight: bold;
   margin: 10px 0;
   display: block;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
