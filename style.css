@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hero+Light&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/geist@latest/dist/geist.css');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
   font-family: 'Playfair Display', serif;
@@ -133,7 +134,7 @@ h3, .highlight {
 }
 
 .highlight {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Pacifico', cursive;
   font-size: 3.5rem;
   font-weight: normal;
   color: #e91e63;
