@@ -56,7 +56,7 @@ h1, h2, h3, .highlight {
 }
 
 .nav-logo video {
-  width: 100px; /* adjust the width to fit your logo */
+  width: 200px; /* adjust the width to fit your logo */
   height: auto; /* maintain aspect ratio */
 }
 
