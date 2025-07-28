@@ -132,6 +132,23 @@ h3 {
   }
 }
 
+
+.goog-te-combo {
+  width: 200px !important;
+  max-width: none !important;
+  height: 30px !important;
+  font-size: 14px !important;
+  padding: 5px !important;
+  border-radius: 5px !important;
+  border: 1px solid #ccc !important;
+}
+
+.goog-te-menu-frame {
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  width: 250px !important;
+}
+
 .hero {
   text-align: center;
   padding: 100px 20px;
