@@ -44,8 +44,6 @@ h1, h2, h3, .nav-logo, .highlight {
 }
 
 .nav-logo {
-  font-family: 'Great Vibes', cursive;
-  text-transform: uppercase;
   font-size: 2.5rem;
   color: #e91e63;
   letter-spacing: 2px;
@@ -370,7 +368,7 @@ footer {
 
 
 .countdown-wrapper h3.count-title {
-  font-style: italic;
+  font-style: bold;
 }
 
 .countdown-boxes {
@@ -405,14 +403,14 @@ footer {
 }
 
 /* Scrollable photo strip */
-.scroll-photos {
+.photo {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 20px;
 }
 
-.scroll-photos img {
+.photo img {
   height: 320px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
