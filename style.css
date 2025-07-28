@@ -22,7 +22,7 @@ body {
    
 }
 
-h1, h2, h3, .highlight {
+h3, .highlight {
   font-family: 'Playfair Display', serif;
 }
 
@@ -133,6 +133,7 @@ h1, h2, h3, .highlight {
 }
 
 .highlight {
+  font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
   font-weight: normal;
   color: #e91e63;
