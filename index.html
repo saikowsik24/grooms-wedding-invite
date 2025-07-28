@@ -28,8 +28,8 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#venue">Venue</a></li>
       </ul>
-      <div id="google_translate_element" style="display:inline-block;"></div>
-      <button id="translate-to-telugu" style="margin-left:10px;">తెలుగు (Telugu)</button>
+      <div id="google_translate_element"></div>
+      <button id="translate-to-telugu">తెలుగు (Telugu)</button>
     </nav>
 
     <div class="music-button">
@@ -266,16 +266,20 @@
     </script>
     <script>
       document.getElementById('translate-to-telugu').addEventListener('click', function() {
-      var iframe = document.getElementsByClassName('goog-te-menu-frame')[0];
-      if (!iframe) return;
-      var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      var form = innerDoc.getElementById(':1.select.LINKED_GOOGLE._goog-trans-button');
-      if (!form) return;
-      var teluguButton = innerDoc.querySelector('[data-language-code="te"]');
-      if (teluguButton) {
-        teluguButton.click();
-      }
-    });
+        var iframe = document.getElementsByClassName('goog-te-menu-frame')[0];
+        if (!iframe) return;
+        var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+        var teluguButton = innerDoc.querySelector('[data-language-code="te"]');
+        if (teluguButton) {
+          teluguButton.click();
+        } else {
+          var select = innerDoc.querySelector('.goog-te-combo');
+          if (select) {
+            select.value = 'te';
+            select.dispatchEvent(new Event('change'));
+          }
+        }
+      });
   </script>
   </body>
 </html>
