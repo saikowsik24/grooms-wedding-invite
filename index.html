@@ -266,22 +266,19 @@
     </script>
     <script>
       function waitForTranslateElement() {
-          var select = document.querySelector('.goog-te-combo');
-          if (select) {
-            document.getElementById('translate-to-telugu').addEventListener('click', function() {
-              select.value = 'te';
-              select.dispatchEvent(new Event('change'));
-              var iframe = document.getElementsByClassName('goog-te-menu-frame')[0];
-              if (iframe) {
-                iframe.contentWindow.location.reload();
-              }
-            });
-          } else {
-            setTimeout(waitForTranslateElement, 500);
-          }
+        var select = document.querySelector('.goog-te-combo');
+        if (select) {
+          document.getElementById('translate-to-telugu').addEventListener('click', function() {
+            select.value = 'te';
+            select.click();
+            select.dispatchEvent(new Event('change'));
+          });
+        } else {
+          setTimeout(waitForTranslateElement, 500);
         }
+      }
 
-        waitForTranslateElement();
+      waitForTranslateElement();
   </script>
   </body>
 </html>
