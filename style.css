@@ -134,6 +134,11 @@ h3 {
   line-height: 1.5;
 }
 
+.hero-content p {
+  font-size: 1.5rem; /* You can adjust this value as needed */
+}
+
+
 .highlight {
   font-family: 'Playfair Display', serif; /* Try using a font that's known for its consistency */
   font-size: 3.5rem;
