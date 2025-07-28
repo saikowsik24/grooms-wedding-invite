@@ -135,13 +135,14 @@ h3 {
 }
 
 .highlight {
-  font-family: 'Allura', cursive;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Playfair Display', serif; /* Try using a font that's known for its consistency */
   font-size: 3.5rem;
   font-weight: normal;
   color: #e91e63;
   margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; /* Add this line */
 }
 
 .names {
