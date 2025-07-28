@@ -11,6 +11,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Playfair Display', serif;
   background: linear-gradient(to top left, #ffe4e1, #fff0f5);
