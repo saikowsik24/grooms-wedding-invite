@@ -407,26 +407,21 @@ footer {
 /* Scrollable photo strip */
 .scroll-photos {
   display: flex;
-  overflow-x: auto;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  justify-content: flex-start;
-  scroll-padding: 20px;
 }
 
 .scroll-photos img {
   height: 320px;
   border-radius: 16px;
-  scroll-snap-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
-.scroll-photos img:hover {
+/* .scroll-photos img:hover {
   transform: scale(1.05);
-}
+} */
 
 /* Romantic message */
 .love-message {
