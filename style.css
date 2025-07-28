@@ -92,7 +92,7 @@ h3 {
 }
 
 #google_translate_element {
-  display: inline-block;
+  display: none;
   margin-left: 20px;
 }
 
