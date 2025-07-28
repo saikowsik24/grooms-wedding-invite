@@ -144,7 +144,7 @@ h3 {
 }
 
 .goog-te-menu-frame {
-  max-height: 300px !important;
+  max-height: 200px !important;
   overflow-y: auto !important;
   width: 250px !important;
 }
