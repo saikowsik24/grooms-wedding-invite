@@ -37,7 +37,7 @@ h3 {
 }
 
 #particles-js canvas {
-  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(287deg) brightness(119%) contrast(119%);
+  filter: sepia(20%) saturate(70%) hue-rotate(320deg) brightness(100%) contrast(90%);
 }
 
 .navbar {
