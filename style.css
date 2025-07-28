@@ -314,8 +314,8 @@ h2 {
     align-items: center;
   }
   .card {
-    width: 80%;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 280px;
   }
 }
 
