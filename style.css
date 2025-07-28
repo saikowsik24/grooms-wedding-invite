@@ -23,7 +23,7 @@ body {
 }
 
 h1, h2, h3, .highlight {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 #particles-js {
@@ -228,7 +228,7 @@ section {
 
 h2 {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   color: #b85c5c;
   margin-bottom: 1rem;
 }
@@ -365,8 +365,8 @@ footer {
   background-color: #fdecef;
   color: #555;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .countdown-wrapper {
