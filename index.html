@@ -265,18 +265,23 @@
           });
     </script>
     <script>
-      document.getElementById('translate-to-telugu').addEventListener('click', function() {
-        console.log('Telugu button clicked');
-        var select = document.querySelector('.goog-te-combo');
-        if (select) {
-          console.log('Select element found');
-          select.value = 'te';
-          select.dispatchEvent(new Event('change'));
-          console.log('Change event dispatched');
-        } else {
-          console.log('Select element not found');
+      function waitForTranslateElement() {
+          var select = document.querySelector('.goog-te-combo');
+          if (select) {
+            document.getElementById('translate-to-telugu').addEventListener('click', function() {
+              select.value = 'te';
+              select.dispatchEvent(new Event('change'));
+              var iframe = document.getElementsByClassName('goog-te-menu-frame')[0];
+              if (iframe) {
+                iframe.contentWindow.location.reload();
+              }
+            });
+          } else {
+            setTimeout(waitForTranslateElement, 500);
+          }
         }
-      });
+
+        waitForTranslateElement();
   </script>
   </body>
 </html>
