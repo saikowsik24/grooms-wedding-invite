@@ -126,6 +126,7 @@ h1, h2, h3, .nav-logo, .highlight {
 }
 
 .names {
+  font-family: 'Lobster', cursive;
   font-size: 3rem;
   color: #c2185b;
   font-weight: normal;
