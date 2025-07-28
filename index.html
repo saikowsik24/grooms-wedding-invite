@@ -267,27 +267,30 @@
     <script>
       let isTelugu = false;
       let originalText = {};
+      let translatedText = {};
 
-      function translateToTelugu() {
+      async function translateToTelugu() {
         var elements = document.querySelectorAll('h1, h2, h3, p, li');
-        elements.forEach(function(element) {
-          if (!isTelugu) {
+        for (let element of elements) {
+          if (!originalText[element]) {
             originalText[element] = element.textContent;
-            fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(element.textContent)}&langpair=en|te`)
-              .then(response => response.json())
-              .then(data => {
-                element.textContent = data.responseData.translatedText;
-              })
-              .catch(error => console.error('Error translating text:', error));
+          }
+          if (!isTelugu) {
+            if (!translatedText[element]) {
+              let response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(element.textContent)}&langpair=en|te`);
+              let data = await response.json();
+              translatedText[element] = data.responseData.translatedText;
+            }
+            element.textContent = translatedText[element];
           } else {
             element.textContent = originalText[element];
           }
-        });
+        }
         isTelugu = !isTelugu;
       }
 
-      document.getElementById('translate-to-telugu').addEventListener('click', function() {
-        translateToTelugu();
+      document.getElementById('translate-to-telugu').addEventListener('click', async function() {
+        await translateToTelugu();
         if (isTelugu) {
           this.textContent = 'English';
         } else {
