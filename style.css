@@ -295,6 +295,25 @@ h2 {
   margin-bottom: 1rem;
 }
 
+
+@media (max-width: 768px) {
+  .venue-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+.venue {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+
 .card {
   background: #fff8fb;
   border: 1px solid #ffcad4;
