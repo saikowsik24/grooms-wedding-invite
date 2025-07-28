@@ -405,7 +405,8 @@ footer {
   padding: 20px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  justify-content: center;
+  justify-content: flex-start;
+  scroll-padding: 20px;
 }
 
 .scroll-photos img {
