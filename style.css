@@ -7,6 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hero+Light&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/geist@latest/dist/geist.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap');
 
 body {
   font-family: 'Playfair Display', serif;
@@ -53,16 +54,6 @@ h1, h2, h3, .highlight {
   white-space: nowrap;
   display: flex;
   align-items: center;
-}
-
-.nav-logo video {
-  width: 100px; /* adjust the width to fit your logo */
-  height: auto; /* maintain aspect ratio */
-}
-
-.nav-logo img {
-  width: 150px; /* adjust width */
-  height: auto; /* maintain aspect ratio */
 }
 
 .initials {
