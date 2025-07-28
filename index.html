@@ -178,6 +178,7 @@
         hoursEl.textContent = "0";
         minsEl.textContent = "0";
         secsEl.textContent = "0";
+        clearInterval(intervalId); // Stop the interval once the countdown reaches 0
         return;
       }
 
@@ -186,14 +187,14 @@
       const mins = Math.floor((diff / 1000 / 60) % 60);
       const secs = Math.floor((diff / 1000) % 60);
 
-      daysEl.textContent = days;
-      hoursEl.textContent = hours;
-      minsEl.textContent = mins;
-      secsEl.textContent = secs;
+      daysEl.textContent = days.toString().padStart(2, '0'); // Add leading zero for single-digit numbers
+      hoursEl.textContent = hours.toString().padStart(2, '0');
+      minsEl.textContent = mins.toString().padStart(2, '0');
+      secsEl.textContent = secs.toString().padStart(2, '0');
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    const intervalId = setInterval(updateCountdown, 1000);
 
       
     </script>
