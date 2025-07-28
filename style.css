@@ -363,9 +363,13 @@ footer {
 .count-title {
   font-size: 1.8rem;
   font-family: 'Cormorant Garamond', serif;
-  font-weight: italic;
   margin-bottom: 1rem;
   color: #c0392b;
+}
+
+
+.countdown-wrapper h3.count-title {
+  font-style: italic;
 }
 
 .countdown-boxes {
