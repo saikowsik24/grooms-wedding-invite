@@ -7,6 +7,12 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </head>
   <body>
     <div id="particles-js"></div>
@@ -22,6 +28,8 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#venue">Venue</a></li>
       </ul>
+      <div id="google_translate_element" style="display:inline-block;"></div>
+      <button id="translate-to-telugu" style="margin-left:10px;">తెలుగు (Telugu)</button>
     </nav>
 
     <div class="music-button">
@@ -256,5 +264,18 @@
             retina_detect: true
           });
     </script>
+    <script>
+      document.getElementById('translate-to-telugu').addEventListener('click', function() {
+      var iframe = document.getElementsByClassName('goog-te-menu-frame')[0];
+      if (!iframe) return;
+      var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+      var form = innerDoc.getElementById(':1.select.LINKED_GOOGLE._goog-trans-button');
+      if (!form) return;
+      var teluguButton = innerDoc.querySelector('[data-language-code="te"]');
+      if (teluguButton) {
+        teluguButton.click();
+      }
+    });
+  </script>
   </body>
 </html>
