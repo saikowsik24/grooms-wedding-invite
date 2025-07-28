@@ -45,12 +45,14 @@ h1, h2, h3, .highlight {
 }
 
 .nav-logo {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
   color: #e91e63;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px #000;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .initials {
@@ -64,8 +66,7 @@ h1, h2, h3, .highlight {
 
 .love-symbol {
   font-size: 2rem; /* adjust the size to match the text */
-  vertical-align: middle; /* center the symbol vertically */
-  margin: 0 10px;
+  margin: 0 5px;
   color: #e91e63;
 }
 
