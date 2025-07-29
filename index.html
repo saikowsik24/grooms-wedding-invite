@@ -213,117 +213,137 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+        const music = document.getElementById("bgMusic");
+        const button = document.querySelector(".music-button button");
+
+        function playMusicOnClick() {
+          music.muted = false;
+          music.play().catch(() => {});
+          button.textContent = "🔊";
+          document.removeEventListener("click", playMusicOnClick);
+        }
+
+        document.addEventListener("click", playMusicOnClick);
+
+        button.addEventListener("click", function (e) {
+          e.stopPropagation(); // Don't trigger page click event
+          if (music.muted) {
+            music.muted = false;
+            music.play();
+            button.textContent = "🔊";
+          } else {
+            music.muted = true;
+            button.textContent = "🔇";
+          }
+        });
+
+        // Countdown Logic
+        const targetDate = new Date("2025-08-18T03:19:00").getTime();
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minsEl = document.getElementById("minutes");
+        const secsEl = document.getElementById("seconds");
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const diff = targetDate - now;
+
+          if (diff <= 0) {
+            daysEl.textContent = "0";
+            hoursEl.textContent = "0";
+            minsEl.textContent = "0";
+            secsEl.textContent = "0";
+            clearInterval(intervalId);
+            return;
+          }
+
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const mins = Math.floor((diff / 1000 / 60) % 60);
+          const secs = Math.floor((diff / 1000) % 60);
+
+          daysEl.textContent = days.toString().padStart(2, '0');
+          hoursEl.textContent = hours.toString().padStart(2, '0');
+          minsEl.textContent = mins.toString().padStart(2, '0');
+          secsEl.textContent = secs.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        const intervalId = setInterval(updateCountdown, 1000);
+
+        // Night Mode / Particles Logic
         const body = document.body;
         const nightModeToggle = document.getElementById("night-mode-toggle");
 
-        // Initialize normal mode
+        // Function to initialize Particles.js based on mode
+        function initializeParticles(isNightMode) {
+          // Destroy existing particles instance if it exists to prevent conflicts
+          if (window.pJSDom && window.pJSDom[0]) {
+            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+            window.pJSDom = []; // Clear the array to ensure a clean re-initialization
+          }
+
+          if (isNightMode) {
+            // Night mode particles (circles)
+            particlesJS("particles-js", {
+              particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                shape: { type: "circle" },
+                color: { value: "#ffffff" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+              },
+              interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: false }, onclick: { enable: false }, resize: true }
+              },
+              retina_detect: true
+            });
+          } else {
+            // Normal mode particles (hearts)
+            particlesJS("particles-js", {
+              particles: {
+                number: { value: 20, density: { enable: true, value_area: 800 } },
+                shape: {
+                  type: "image",
+                  image: {
+                    src: "https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG@master/black/png/32/heart.png",
+                    width: 32,
+                    height: 32
+                  }
+                },
+                opacity: { value: 0.8, random: true },
+                size: { value: 16, random: true },
+                move: { enable: true, speed: 2, direction: "top", out_mode: "out" }
+              },
+              interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: false }, onclick: { enable: false }, resize: true }
+              },
+              retina_detect: true
+            });
+          }
+        }
+
+        // Initialize normal mode on page load
         body.classList.add("normal-mode");
-        nightModeToggle.innerHTML = '🌕'; // moon icon for night mode
+        nightModeToggle.innerHTML = '🌕'; // Moon icon initially for switching to night mode
+        initializeParticles(false); // Initialize particles for normal mode when the page loads
 
         nightModeToggle.addEventListener("click", function () {
-              body.classList.toggle("night-mode");
-              body.classList.toggle("normal-mode");
+          body.classList.toggle("night-mode");
+          body.classList.toggle("normal-mode");
 
-              if (body.classList.contains("night-mode")) {
-                nightModeToggle.innerHTML = '☀️'; // sun icon
-                particlesJS("particles-js", {
-                  particles: {
-                    number: {
-                      value: 100,
-                      density: {
-                        enable: true,
-                        value_area: 800
-                      }
-                    },
-                    shape: {
-                      type: "circle"
-                    },
-                    color: {
-                      value: "#ffffff"
-                    },
-                    opacity: {
-                      value: 0.5,
-                      random: true
-                    },
-                    size: {
-                      value: 3,
-                      random: true
-                    },
-                    move: {
-                      enable: true,
-                      speed: 1,
-                      direction: "none",
-                      random: true,
-                      straight: false,
-                      out_mode: "out",
-                      bounce: false
-                    }
-                  },
-                  interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                      onhover: {
-                        enable: false
-                      },
-                      onclick: {
-                        enable: false
-                      },
-                      resize: true
-                    }
-                  },
-                  retina_detect: true
-                });
-              } else {
-                nightModeToggle.innerHTML = '🌕'; // moon icon
-                particlesJS("particles-js", {
-                  particles: {
-                    number: {
-                      value: 20,
-                      density: {
-                        enable: true,
-                        value_area: 800
-                      }
-                    },
-                    shape: {
-                      type: "image",
-                      image: {
-                        src: "https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG@master/black/png/32/heart.png",
-                        width: 32,
-                        height: 32
-                      }
-                    },
-                    opacity: {
-                      value: 0.8,
-                      random: true
-                    },
-                    size: {
-                      value: 16,
-                      random: true
-                    },
-                    move: {
-                      enable: true,
-                      speed: 2,
-                      direction: "top",
-                      out_mode: "out"
-                    }
-                  },
-                  interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                      onhover: {
-                        enable: false
-                      },
-                      onclick: {
-                        enable: false
-                      },
-                      resize: true
-                    }
-                  },
-                  retina_detect: true
-                });
-              }
-            });
-          });
+          if (body.classList.contains("night-mode")) {
+            nightModeToggle.innerHTML = '☀️'; // Sun icon for switching to normal mode
+            initializeParticles(true); // Initialize particles for night mode
+          } else {
+            nightModeToggle.innerHTML = '🌕'; // Moon icon for switching to night mode
+            initializeParticles(false); // Initialize particles for normal mode
+          }
+        });
+      });
     </script>
   </body>
 </html>

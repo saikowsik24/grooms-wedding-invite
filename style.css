@@ -43,7 +43,7 @@ h3 {
 }
 
 .navbar {
-  background-color: #FF1D8D;
+  background-color: #F8E8EE; /* Example: Very light blush pink */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,9 +56,9 @@ h3 {
 .nav-logo {
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
-  color: #e91e63;
+  color: #C2185B; /* Example: Deeper rose for better contrast */
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px #000;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Slightly toned down shadow */
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@ h3 {
 .love-symbol {
   font-size: 2rem; /* adjust the size to match the text */
   margin: 0 5px;
-  color: #e91e63;
+  color: #C2185B;
 }
 
 .navbar ul {
@@ -433,7 +433,7 @@ h2 {
 }
 
 footer {
-  background-color: #FF1D8D;
+  background-color: #F8E8EE;
   color: #555;
   text-align: center;
   padding: 1.5rem;
