@@ -117,7 +117,7 @@ h3 {
 }
 /* Icon color when the page is in normal (day) mode) */
 .normal-mode #night-mode-toggle {
-  color: #6c757d; /* Changed to a medium grey for better visibility */
+  color: #F0EDE5; /* Changed to a FULL MOON WARM TINT for better visibility */
 }
 /* Icon color when the page is in night mode */
 .night-mode #night-mode-toggle {
