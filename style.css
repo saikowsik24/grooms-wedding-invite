@@ -11,10 +11,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 /* Make sure you have the 'Lobster' font imported if you intend to use it as in previous versions */
-/* @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 /* Make sure you have 'Cormorant Garamond' and 'Open Sans' if they are used elsewhere */
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 
 body, html {
@@ -89,7 +89,6 @@ h3 {
   justify-content: center; /* Centers nav links on desktop */
   list-style: none;
   gap: 2rem; /* Spacing between nav items on desktop */
-  /* margin-bottom: 0; is not needed here as it's not a column layout */
 }
 
 .navbar a {
@@ -97,7 +96,6 @@ h3 {
   color: #8b2c4a;
   font-weight: 500;
   transition: color 0.3s ease;
-  /* No default padding/font-size here unless you want it on all sizes */
 }
 
 .navbar a:hover {
@@ -117,7 +115,7 @@ h3 {
   padding: 0;
   z-index: 1000; /* Ensure it's above other content */
 }
-/* Icon color when the page is in normal (day) mode */
+/* Icon color when the page is in normal (day) mode) */
 .normal-mode #night-mode-toggle {
   color: #8b2c4a; /* Dark rose/maroon for good contrast on your light background */
 }
@@ -130,18 +128,13 @@ h3 {
 /* NAVBAR - MOBILE STYLES (for screens up to 768px wide) */
 @media (max-width: 768px) {
   .navbar {
-    flex-wrap: wrap; /* Allows items to wrap to next line if space is too tight */
-    align-items: center;
-    justify-content: space-between; /* Keeps logo left, other items right */
-    gap: 0.5rem; /* Add a small gap between main items (logo, nav/toggle group) */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
     padding: 1rem;
   }
   .nav-logo {
     font-size: 2rem; /* Slightly smaller logo for mobile */
-    margin-bottom: 0;
-    flex-grow: 1; /* Allows logo to take available space */
-    text-align: left; /* Keep logo to the left */
-    margin-right: 0; /* Ensures no extra margin */
+    margin-bottom: 0.5rem; /* Space below the logo */
   }
   .initials {
     font-size: 2rem; /* Consistent with nav-logo on mobile */
@@ -150,21 +143,18 @@ h3 {
     font-size: 1.5rem; /* Consistent with nav-logo on mobile */
   }
 
-  /* Grouping nav links and night mode toggle for horizontal alignment */
-  .navbar > *:not(.nav-logo) {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem; /* Gap between the `ul` (nav links) and the `#night-mode-toggle` button */
-    justify-content: flex-end; /* Aligns this group to the right */
-    /* flex-grow: 1; If you want this group to expand and push the logo left */
+  .navbar ul {
+    flex-direction: row; /* Keep nav links horizontal */
+    justify-content: space-around; /* Distribute links evenly */
+    width: 100%; /* Make links take full width */
+    margin-bottom: 0.5rem; /* Space below the nav links */
+    gap: 0; /* Remove gap if using space-around */
+    padding: 0 1rem; /* Add horizontal padding to the ul itself */
   }
 
-  .navbar ul {
-    /* These properties are now mainly for the individual list items within the ul on mobile */
-    /* flex-grow, justify-content removed here as handled by parent .navbar > *:not(.nav-logo) */
-    gap: 1rem; /* Smaller gap between individual nav links (Home, Events) on mobile */
-    margin-right: 0;
-    /* margin-bottom: 0; Explicitly remove any bottom margin from UL on mobile */
+  .navbar li {
+    flex-basis: 25%; /* Each nav item takes 25% width (4 items) */
+    text-align: center; /* Center the text within each li */
   }
 
   .navbar a { /* Apply specific styles to nav links for mobile */
@@ -173,6 +163,9 @@ h3 {
   }
 
   #night-mode-toggle {
+    position: absolute; /* Position it absolutely */
+    top: 1rem; /* Align to the top */
+    right: 1rem; /* Align to the right */
     font-size: 1.5rem; /* Mobile size for toggle icon */
     padding: 0;
     z-index: 1001; /* Ensure it's above other content in mobile */
@@ -203,15 +196,115 @@ h3 {
   h2 {
     font-size: 2rem;
   }
-
-  /* If you want the nav links even smaller on <600px, add a rule here */
-  /*
-  .navbar a {
-    font-size: 0.8rem;
-  }
-  */
 }
 
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: url('wedding-bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: #333333;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 240, 245, 0.15); /* Lighter pink overlay */
+  z-index: 0;
+}
+
+.hero-content {
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 2;
+  line-height: 1.5;
+}
+
+.hero-content p {
+  font-size: 1.5rem; /* You can adjust this value as needed */
+}
+
+.highlight {
+  font-family: 'Playfair Display', serif; /* Try using a font that's known for its consistency */
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: #e91e63;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Slightly lighter shadow */
+  margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.names {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  color: #c2185b;
+  font-weight: bold;
+  margin: 10px 0;
+  display: block;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow */
+  z-index: 3;
+}
+
+.bride {
+  color: #c2185b; /* slightly deeper pink */
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.groom {
+  color: #2196f3;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.music-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.music-button button {
+  background: linear-gradient(135deg, #ff4081, #ff80ab);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s;
+}
+
+.music-button button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.music-button button.playing {
+  background: #ff4081; /* Brighter pink */
+  color: white;
+  box-shadow: 0 0 12px #ff80ab;
+  transform: scale(1.1);
+  opacity: 1; /* Remove dimming */
+}
 
 section {
   padding: 60px 20px;
@@ -219,8 +312,9 @@ section {
   background-color: transparent;
 }
 
+/* This rule doesn't do much on its own, section's transparent background is usually enough */
 .night-mode .couple {
-  background-color: transparent; /* Should inherit from body, but explicitly transparent here */
+  background-color: transparent;
 }
 
 h2 {
@@ -288,24 +382,11 @@ h2 {
   margin-bottom: 1rem;
 }
 
-
-@media (max-width: 768px) {
-  .venue-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
 .venue {
   padding-top: 40px;
   padding-bottom: 40px;
   text-align: center;
 }
-
 
 .card {
   background-color: #ffffff; /* Clean white background */
@@ -378,7 +459,6 @@ h2 {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 
-
 .guest-card h3 {
   font-family: 'Great Vibes', cursive;
   color: #c2185b; /* A consistent main pink for these titles */
@@ -431,7 +511,6 @@ footer p:last-child {
   text-transform: uppercase; /* Optional: Make it uppercase for more impact */
 }
 
-
 .countdown-wrapper {
   margin-top: 2rem;
   text-align: center;
@@ -443,7 +522,6 @@ footer p:last-child {
   margin-bottom: 1rem;
   color: #c0392b;
 }
-
 
 .countdown-wrapper h3.count-title {
   font-style: bold;
@@ -496,10 +574,6 @@ footer p:last-child {
   transition: transform 0.3s ease;
 }
 
-/* .scroll-photos img:hover {
-  transform: scale(1.05);
-} */
-
 /* Romantic message */
 .love-message {
   text-align: center;
@@ -546,7 +620,6 @@ button:focus {
 }
 
 /* Hero Section in Night Mode */
-/* This will darken your hero background image and make text light */
 .night-mode .hero::after {
   background-color: rgba(0, 0, 0, 0.75); /* Darker, more opaque overlay for the hero background image */
 }
@@ -578,23 +651,38 @@ button:focus {
 .night-mode .event h4 {
   color: #add8e6; /* Light blue/teal for event titles */
 }
+.night-mode .event p { /* Ensure text in event cards is white */
+  color: #ffffff;
+}
+.night-mode .event p span { /* Ensure icons/dates in event cards are white */
+  color: #add8e6; /* Light blue for icons */
+}
+
 
 /* Venue Cards in Night Mode */
 .night-mode .card {
   background: #2a3a4b; /* Darker background for venue cards */
   border-color: #3b506b;
-  color: #ffffff;
+  color: #ffffff; /* White text for general content */
 }
 .night-mode .card h3 {
   color: #add8e6;
 }
+.night-mode .card p { /* Ensure text in venue cards is white */
+  color: #ffffff;
+}
+.night-mode .card p span { /* Ensure icons/dates in venue cards are white */
+  color: #add8e6; /* Light blue for icons */
+}
 .night-mode .card a {
   color: #add8e6; /* Light blue/teal for location links */
+}
+.night-mode .card a:hover {
+  color: #ffffff; /* White on hover for links */
 }
 
 /* Guest Cards in Night Mode */
 .night-mode .guests {
-  /* FIX: Set a solid dark background for the guests section in night mode */
   background-color: #1f2a3a; /* A dark shade matching your gradient start */
   border-color: #3b506b; /* Darker border */
 }
@@ -602,11 +690,21 @@ button:focus {
 .night-mode .guest-card {
   background: #2a3a4b; /* Darker background for guest cards */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
-  color: #ffffff;
+  color: #ffffff; /* White text for general content */
 }
 .night-mode .guest-card h3 {
   color: #add8e6; /* Light blue/teal for guest card titles */
 }
+.night-mode .guest-card ul {
+  color: #ffffff; /* White text for list items */
+}
+.night-mode .guest-card ul li { /* Ensure individual list items are white */
+  color: #ffffff;
+}
+.night-mode .guest-card .icon { /* Ensure icons in guest cards are colored */
+  color: #add8e6; /* Light blue for icons */
+}
+
 
 /* Countdown Boxes in Night Mode */
 .night-mode .countdown-boxes .count-box {
@@ -641,7 +739,6 @@ button:focus {
 .night-mode .hashtag {
   color: #ffffff; /* White for hashtag in night mode for good contrast */
 }
-
 
 /* Music Button in Night Mode */
 .night-mode .music-button button {
