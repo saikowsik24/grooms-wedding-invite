@@ -22,6 +22,7 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#venue">Venue</a></li>
       </ul>
+      <button id="night-mode-toggle" style="background-color: transparent; border: none; color: #8b2c4a; font-size: 16px; cursor: pointer;">🌃 Night Mode</button>
     </nav>
 
     <div class="music-button">
@@ -211,7 +212,67 @@
       
     </script>
     <script>
-        particlesJS("particles-js", {
+        document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  const nightModeToggle = document.getElementById("night-mode-toggle");
+
+  // Initialize normal mode
+  body.classList.add("normal-mode");
+
+  nightModeToggle.addEventListener("click", function () {
+    body.classList.toggle("night-mode");
+    body.classList.toggle("normal-mode");
+
+    if (body.classList.contains("night-mode")) {
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 100,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          shape: {
+            type: "circle"
+          },
+          color: {
+            value: "#ffffff"
+          },
+          opacity: {
+            value: 0.5,
+            random: true
+          },
+          size: {
+            value: 3,
+            random: true
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: false
+            },
+            onclick: {
+              enable: false
+            },
+            resize: true
+          }
+        },
+        retina_detect: true
+      });
+        } else {
+          particlesJS("particles-js", {
             particles: {
               number: {
                 value: 20,
@@ -257,6 +318,9 @@
             },
             retina_detect: true
           });
+        }
+      });
+    });
     </script>
   </body>
 </html>
