@@ -107,7 +107,7 @@ h3 {
 
 /* NIGHT MODE TOGGLE BUTTON - DESKTOP */
 #night-mode-toggle {
-  font-size: 1.5rem; /* Make the icons noticeably bigger */
+  font-size: 1.8rem; /* Make the icons noticeably bigger */
   transition: color 0.5s ease;
   cursor: pointer;
   border: none;
@@ -117,7 +117,7 @@ h3 {
 }
 /* Icon color when the page is in normal (day) mode) */
 .normal-mode #night-mode-toggle {
-  color: #CCCCCC; /* Changed to a light grey for a moon-like appearance */
+  color: #6c757d; /* Changed to a medium grey for better visibility */
 }
 /* Icon color when the page is in night mode */
 .night-mode #night-mode-toggle {
