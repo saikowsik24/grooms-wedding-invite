@@ -229,26 +229,26 @@
             // NIGHT MODE PARTICLES (SUBTLE NON-TWINKLING STARS - YOUR NEW PREFERENCE)
                 particlesJS("particles-js", {
                 particles: {
-                  number: { value: 120, density: { enable: true, value_area: 1000 } }, // Moderate number, spread out
+                  number: { value: 250, density: { enable: true, value_area: 800 } }, // Moderate number, spread out
                   shape: {
                     type: "circle", // Using the built-in 'circle' shape
-                    stroke: { width: 0, color: "#000000" }, // Optional: Add a stroke if you want
                   },
-                  color: { value: "#add8e6" }, // Light blue/teal for a distinct night-sky feel
+                  color: { value: "#FFFFFF" }, // Light blue/teal for a distinct night-sky feel
                   opacity: {
-                    value: 0.8, // Subtle opacity for a distant look
-                    random: true, // Random initial opacity for natural variation
+                    value: 1, // Subtle opacity for a distant look
+                    random: true, // NO Random initial opacity for natural variation
                     anim: {
                       enable: true, // Disable animation so they don't twinkle
+                      speed: 1,
                       opacity_min: 0.1, // Minimum opacity during animation (don't disappear completely)
                       sync: false // Particles animate independently
                     }
                   },
-                  size: { value: 2, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } }, // Small, fixed size for star points, no size animation
+                  size: { value: 5, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } }, // Small, fixed size for star points, no size animation
                   line_linked: { enable: false }, // No lines connecting particles
                   move: {
                     enable: true,
-                    speed: 0.3, // Slightly faster drift
+                    speed: 0.5, // Slightly faster drift
                     direction: "none", // Drifts randomly
                     random: true, // Movement is random
                     straight: false, // Not moving in straight lines
