@@ -711,6 +711,10 @@ button:focus {
   color: #add8e6; /* Light blue for icons */
 }
 
+.night-mode .guest-subtitle {
+  color: #ffffff; 
+}
+
 
 /* Countdown Boxes in Night Mode */
 .night-mode .countdown-boxes .count-box {
