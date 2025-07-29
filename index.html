@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <div id="particles-js"></div>
@@ -22,7 +23,7 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#venue">Venue</a></li>
       </ul>
-      <button id="night-mode-toggle" style="background-color: transparent; border: none; color: #8b2c4a; font-size: 16px; cursor: pointer;">🌕</button>
+      <button id="night-mode-toggle" style="background-color: transparent; border: none; color: #8b2c4a; font-size: 16px; cursor: pointer;"><i class="fa-solid fa-sun"></i></button>
     </nav>
 
     <div class="music-button">
@@ -223,61 +224,69 @@
           }
 
           if (isNightMode) {
-            // Night mode particles (twinkling stars effect)
-            particlesJS("particles-js", {
-              particles: {
-                number: { value: 150, density: { enable: true, value_area: 800 } }, // Increased number for more stars
-                shape: { type: "circle" }, // Keep circle shape, size will make them look like points of light
-                color: { value: "#ffffff" }, // White stars
-                opacity: {
-                  value: 0.8, // Base opacity for visible stars
-                  random: true, // Random initial opacity
-                  anim: {
-                    enable: true, // Enable twinkling animation
-                    speed: 1,     // Speed of twinkling
-                    opacity_min: 0.1, // Stars will fade to almost invisible
-                    sync: false     // Each star twinkles independently
+            // NIGHT MODE PARTICLES (SUBTLE NON-TWINKLING STARS - YOUR NEW PREFERENCE)
+                particlesJS("particles-js", {
+                particles: {
+                  number: { value: 120, density: { enable: true, value_area: 1000 } }, // Moderate number, spread out
+                  shape: {
+                    type: "star", // Using the built-in 'star' shape
+                  },
+                  color: { value: "#ffffff" }, // White for stars
+                  opacity: {
+                    value: 0.5, // Subtle opacity for a distant look
+                    random: true, // Random initial opacity for natural variation
+                    anim: {
+                      enable: false // Disable animation so they don't twinkle
+                    }
+                  },
+                  size: { value: 2, random: true, anim: { enable: false } }, // Small, fixed size for star points, no size animation
+                  line_linked: { enable: false }, // No lines connecting particles
+                  move: {
+                    enable: true,
+                    speed: 0.15, // Very slow, subtle drift
+                    direction: "none", // Drifts randomly
+                    random: true, // Movement is random
+                    straight: false, // Not moving in straight lines
+                    out_mode: "out", // Particles disappear off-screen and reappear
+                    bounce: false,
+                    attract: { enable: false, rotateX: 600, rotateY: 1200 }
                   }
                 },
-                size: { value: 0.8, random: true, anim: { enable: false } }, // Very small size for distant stars
-                move: { enable: true, speed: 0.3, direction: "none", random: true, straight: false, out_mode: "out", bounce: false } // Very slow, subtle movement
-              },
-              interactivity: {
-                detect_on: "canvas",
-                events: { onhover: { enable: false }, onclick: { enable: false }, resize: true }
-              },
-              retina_detect: true
-            });
-          } else {
-            // Normal mode particles (hearts) - Keep this as is
-            particlesJS("particles-js", {
-              particles: {
-                number: { value: 20, density: { enable: true, value_area: 800 } },
-                shape: {
-                  type: "image",
-                  image: {
-                    src: "https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG@master/black/png/32/heart.png",
-                    width: 32,
-                    height: 32
-                  }
+                interactivity: {
+                  detect_on: "canvas",
+                  events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } // No interactivity
                 },
-                opacity: { value: 0.8, random: true },
-                size: { value: 16, random: true },
-                move: { enable: true, speed: 2, direction: "top", out_mode: "out" }
-              },
-              interactivity: {
-                detect_on: "canvas",
-                events: { onhover: { enable: false }, onclick: { enable: false }, resize: true }
-              },
-              retina_detect: true
-            });
-          }
+                retina_detect: true
+              });
+            } else {
+            // NORMAL MODE PARTICLES (HEARTS - AS PER YOUR ORIGINAL CONFIGURATION)
+                particlesJS("particles-js", {
+                  particles: {
+                    number: { value: 20, density: { enable: true, value_area: 800 } },
+                    shape: {
+                      type: "image",
+                      image: {
+                        src: "https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG@master/black/png/32/heart.png",
+                        width: 32,
+                        height: 32
+                      }
+                    },
+                    opacity: { value: 0.8, random: true },
+                    size: { value: 16, random: true },
+                    move: { enable: true, speed: 2, direction: "top", out_mode: "out" }
+                  },
+                  interactivity: {
+                    detect_on: "canvas",
+                    events: { onhover: { enable: false }, onclick: { enable: false }, resize: true }
+                  },
+                  retina_detect: true
+                });
+           }
         }
-
         // Initialize normal mode on page load
         body.classList.add("normal-mode");
         // *** CHANGE HERE: Sun icon for normal mode ***
-        nightModeToggle.innerHTML = '☀️';
+        nightModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
         initializeParticles(false); // Initialize particles for normal mode (hearts)
 
         nightModeToggle.addEventListener("click", function () {
@@ -286,11 +295,11 @@
 
           if (body.classList.contains("night-mode")) {
             // *** CHANGE HERE: Moon icon for night mode ***
-            nightModeToggle.innerHTML = '🌕';
+            nightModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
             initializeParticles(true); // Initialize particles for night mode (circles)
           } else {
             // *** CHANGE HERE: Sun icon for normal mode ***
-            nightModeToggle.innerHTML = '☀️';
+            nightModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
             initializeParticles(false); // Initialize particles for normal mode (hearts)
           }
         });
