@@ -223,15 +223,24 @@
           }
 
           if (isNightMode) {
-            // Night mode particles (circles)
+            // Night mode particles (twinkling stars effect)
             particlesJS("particles-js", {
               particles: {
-                number: { value: 100, density: { enable: true, value_area: 800 } },
-                shape: { type: "circle" },
-                color: { value: "#ffffff" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+                number: { value: 150, density: { enable: true, value_area: 800 } }, // Increased number for more stars
+                shape: { type: "circle" }, // Keep circle shape, size will make them look like points of light
+                color: { value: "#ffffff" }, // White stars
+                opacity: {
+                  value: 0.8, // Base opacity for visible stars
+                  random: true, // Random initial opacity
+                  anim: {
+                    enable: true, // Enable twinkling animation
+                    speed: 1,     // Speed of twinkling
+                    opacity_min: 0.1, // Stars will fade to almost invisible
+                    sync: false     // Each star twinkles independently
+                  }
+                },
+                size: { value: 0.8, random: true, anim: { enable: false } }, // Very small size for distant stars
+                move: { enable: true, speed: 0.3, direction: "none", random: true, straight: false, out_mode: "out", bounce: false } // Very slow, subtle movement
               },
               interactivity: {
                 detect_on: "canvas",
@@ -240,7 +249,7 @@
               retina_detect: true
             });
           } else {
-            // Normal mode particles (hearts)
+            // Normal mode particles (hearts) - Keep this as is
             particlesJS("particles-js", {
               particles: {
                 number: { value: 20, density: { enable: true, value_area: 800 } },
