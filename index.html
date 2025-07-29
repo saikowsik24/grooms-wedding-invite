@@ -233,13 +233,13 @@
                   shape: {
                     type: "circle", // Using the built-in 'circle' shape
                   },
-                  color: { value: "#00FF00" }, // Light blue/teal for a distinct night-sky feel
+                  color: { value: "#FFFFFF" }, // WHITE
                   opacity: {
-                    value: 1, // Subtle opacity for a distant look
+                    value: 1, // Subtle opacity for a distant looks
                     random: true, // NO Random initial opacity for natural variation
                     anim: {
                       enable: true, // Disable animation so they don't twinkle
-                      speed: 1,
+                      speed: 2,
                       opacity_min: 0.1, // Minimum opacity during animation (don't disappear completely)
                       sync: false // Particles animate independently
                     }
@@ -253,7 +253,7 @@
                     random: true, // Movement is random
                     straight: false, // Not moving in straight lines
                     out_mode: "out", // Particles disappear off-screen and reappear
-                    bounce: false,
+                    bounce: true,
                     attract: { enable: false, rotateX: 600, rotateY: 1200 }
                   }
                 },
