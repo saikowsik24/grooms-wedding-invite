@@ -603,7 +603,7 @@ button:focus {
     background-color: #1f2a3a; /* A dark shade matching your gradient start */
     border-color: #3b506b; /* Darker border */
 }
-\
+
 .night-mode .guest-card {
   background: #2a3a4b; /* Darker background for guest cards */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
