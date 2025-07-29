@@ -638,10 +638,7 @@ button:focus {
     border: none;
     background: none;
     padding: 0;
-    /* Position the toggle button relative to the viewport */
-    position: fixed;
-    right: 20px;
-    bottom: 60px; /* Adjust this if it clashes with your music button */
+    margin-left: auto; /* Pushes the button to the far right in a flex container */
     z-index: 1000;
 }
 /* Icon color when the page is in normal (day) mode */
