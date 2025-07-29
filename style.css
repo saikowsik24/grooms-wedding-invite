@@ -107,7 +107,7 @@ h3 {
 
 /* NIGHT MODE TOGGLE BUTTON - DESKTOP */
 #night-mode-toggle {
-  font-size: 1.8rem; /* Make the icons noticeably bigger */
+  font-size: 2.5rem; /* Make the icons noticeably bigger */
   transition: color 0.5s ease;
   cursor: pointer;
   border: none;
