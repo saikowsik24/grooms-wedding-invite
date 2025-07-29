@@ -147,7 +147,9 @@
    </section>
 
     <footer>
-      <p>With love, #MSForever❤️</p>
+      <p class="footer-main-text">Manoj Weds Supriya</p>
+      <p>Made with❤️</p>
+      <p class="hashtag">#MSFOREVER</p>
     </footer>
 
     <script>  
@@ -286,7 +288,7 @@
         // Initialize normal mode on page load
         body.classList.add("normal-mode");
         // *** CHANGE HERE: Sun icon for normal mode ***
-        nightModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        nightModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
         initializeParticles(false); // Initialize particles for normal mode (hearts)
 
         nightModeToggle.addEventListener("click", function () {
@@ -295,11 +297,11 @@
 
           if (body.classList.contains("night-mode")) {
             // *** CHANGE HERE: Moon icon for night mode ***
-            nightModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            nightModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
             initializeParticles(true); // Initialize particles for night mode (circles)
           } else {
             // *** CHANGE HERE: Sun icon for normal mode ***
-            nightModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            nightModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
             initializeParticles(false); // Initialize particles for normal mode (hearts)
           }
         });
