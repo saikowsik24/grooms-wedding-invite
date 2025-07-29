@@ -607,13 +607,12 @@ button:focus {
 
 /* Add a solid background to all sections in night mode */
 .night-mode section {
-  background-color: rgba(31, 42, 58, 0.2); /* A solid dark color for sections, now 90% opaque */
+  background-color: rgba(31, 42, 58, 0.9); /* A solid dark color for sections, now 90% opaque */
 }
 
 /* Navbar in Night Mode */
 .night-mode .navbar {
-  background-color: rgba(26, 43, 60, 0.25); /* Slightly darker shade for the navbar, now 95% opaque */
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2); /* Reintroduce a subtle shadow */
+  background-color: rgba(26, 43, 60, 0.95); /* Slightly darker shade for the navbar, now 95% opaque */
 }
 .night-mode .nav-logo,
 .night-mode .love-symbol {
@@ -628,7 +627,7 @@ button:focus {
 
 /* Hero Section in Night Mode */
 .night-mode .hero::after {
-  background-color: rgba(0, 0, 0, 0.3); /* WAS 0.6, now 30% opaque */
+  background-color: rgba(0, 0, 0, 0.6); /* Darker, more opaque overlay for the hero background image, now 60% opaque */
 }
 .night-mode .hero-content .highlight,
 .night-mode .hero-content h2,
@@ -651,8 +650,8 @@ button:focus {
 
 /* Event Cards in Night Mode */
 .night-mode .event {
-  background: rgba(42, 58, 75, 0.2); /* Darker background for event cards, now 90% opaque */
-  border-color: rgba(59, 80, 107, 0.3); /* Make border slightly transparent too */
+  background: rgba(42, 58, 75, 0.9); /* Darker background for event cards, now 90% opaque */
+  border-color: #3b506b; /* Darker border */
   color: #ffffff; /* White text */
 }
 .night-mode .event h4 {
@@ -668,8 +667,8 @@ button:focus {
 
 /* Venue Cards in Night Mode */
 .night-mode .card {
-  background: rgba(42, 58, 75, 0.2); /* Darker background for venue cards, now 90% opaque */
-  border-color: rgba(59, 80, 107, 0.3); /* Make border slightly transparent too */
+  background: rgba(42, 58, 75, 0.9); /* Darker background for venue cards, now 90% opaque */
+  border-color: #3b506b;
   color: #ffffff; /* White text for general content */
 }
 .night-mode .card h3 {
@@ -690,13 +689,13 @@ button:focus {
 
 /* Guest Cards in Night Mode */
 .night-mode .guests {
-  background-color: rgba(31, 42, 58, 0.2); /* WAS 0.9, now 20% opaque */
-  border-color: rgba(59, 80, 107, 0.3); /* Make border slightly transparent too */
+  background-color: rgba(31, 42, 58, 0.9); /* A dark shade matching your gradient start, now 90% opaque */
+  border-color: #3b506b; /* Darker border */
 }
 
 .night-mode .guest-card {
-  background: rgba(42, 58, 75, 0.2); /* WAS 0.9, now 20% opaque */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Lighter shadow for more translucency */
+  background: rgba(42, 58, 75, 0.9); /* Darker background for guest cards, now 90% opaque */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
   color: #ffffff; /* White text for general content */
 }
 .night-mode .guest-card h3 {
@@ -719,9 +718,9 @@ button:focus {
 
 /* Countdown Boxes in Night Mode */
 .night-mode .countdown-boxes .count-box {
-  background-color: rgba(42, 58, 75, 0.2); /* WAS 0.9, now 20% opaque */
-  border: 2px solid rgba(59, 80, 107, 0.3); /* Make border transparent too */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Lighter shadow */
+  background: rgba(42, 58, 75, 0.9); /* Darker background for countdown boxes, now 90% opaque */
+  border-color: #3b506b;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .night-mode .count-box span {
   color: #add8e6; /* Light blue/teal for numbers */
@@ -732,14 +731,14 @@ button:focus {
 
 /* Love Message in Night Mode */
 .night-mode .love-message {
-  background-color: rgba(42, 58, 75, 0.2); /* Make this transparent as well */
+  background: linear-gradient(45deg, rgba(31, 42, 58, 0.9), rgba(42, 58, 75, 0.9)); /* Darker gradient, now 90% opaque */
   color: #add8e6; /* Light blue/teal */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer in Night Mode */
 .night-mode footer {
-  background-color: rgba(26, 43, 60, 0.25); /* WAS F8E8EE or opaque night color, now 25% opaque */
+  background-color: rgba(26, 43, 60, 0.95); /* Match navbar background in night mode, now 95% opaque */
   color: #ffffff; /* General white text for night mode footer */
 }
 
