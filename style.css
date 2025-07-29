@@ -117,7 +117,7 @@ h3 {
 }
 /* Icon color when the page is in normal (day) mode) */
 .normal-mode #night-mode-toggle {
-  color: #F0E68C; /* Changed to Pale Goldenrod for a soft, glowing moon look */
+  color: #3f3f3f; /* Very bright grey for the moon */
 }
 /* Icon color when the page is in night mode */
 .night-mode #night-mode-toggle {
