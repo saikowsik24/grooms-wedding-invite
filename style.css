@@ -117,11 +117,11 @@ h3 {
 }
 /* Icon color when the page is in normal (day) mode) */
 .normal-mode #night-mode-toggle {
-  color: #8b2c4a; /* Dark rose/maroon for good contrast on your light background */
+  color: #CCCCCC; /* Changed to a light grey for a moon-like appearance */
 }
 /* Icon color when the page is in night mode */
 .night-mode #night-mode-toggle {
-  color: #add8e6; /* Light blue/teal for good contrast on dark background */
+  color: #FFD700; /* Changed to Gold for a sun-like appearance */
 }
 
 
