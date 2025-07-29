@@ -231,21 +231,24 @@
                 particles: {
                   number: { value: 120, density: { enable: true, value_area: 1000 } }, // Moderate number, spread out
                   shape: {
-                    type: "star", // Using the built-in 'star' shape
+                    type: "circle", // Using the built-in 'circle' shape
+                    stroke: { width: 0, color: "#000000" }, // Optional: Add a stroke if you want
                   },
-                  color: { value: "#ffffff" }, // White for stars
+                  color: { value: "#add8e6" }, // Light blue/teal for a distinct night-sky feel
                   opacity: {
-                    value: 0.5, // Subtle opacity for a distant look
+                    value: 0.8, // Subtle opacity for a distant look
                     random: true, // Random initial opacity for natural variation
                     anim: {
-                      enable: true // Disable animation so they don't twinkle
+                      enable: true, // Disable animation so they don't twinkle
+                      opacity_min: 0.1, // Minimum opacity during animation (don't disappear completely)
+                      sync: false // Particles animate independently
                     }
                   },
-                  size: { value: 2, random: true, anim: { enable: false } }, // Small, fixed size for star points, no size animation
+                  size: { value: 2, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } }, // Small, fixed size for star points, no size animation
                   line_linked: { enable: false }, // No lines connecting particles
                   move: {
                     enable: true,
-                    speed: 0.15, // Very slow, subtle drift
+                    speed: 0.3, // Slightly faster drift
                     direction: "none", // Drifts randomly
                     random: true, // Movement is random
                     straight: false, // Not moving in straight lines
