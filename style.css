@@ -315,7 +315,7 @@ section {
 
 /* This rule doesn't do much on its own, section's transparent background is usually enough */
 .night-mode .couple {
-  background-color: transparent;
+  background-color: #1f2a3a;;
 }
 
 h2 {
