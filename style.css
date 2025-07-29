@@ -117,7 +117,7 @@ h3 {
 }
 /* Icon color when the page is in normal (day) mode) */
 .normal-mode #night-mode-toggle {
-  color: #F0EDE5; /* Changed to a FULL MOON WARM TINT for better visibility */
+  color: #F0E68C; /* Changed to Pale Goldenrod for a soft, glowing moon look */
 }
 /* Icon color when the page is in night mode */
 .night-mode #night-mode-toggle {
