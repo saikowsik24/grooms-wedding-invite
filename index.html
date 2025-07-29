@@ -308,6 +308,30 @@
             initializeParticles(false); // Initialize particles for normal mode (hearts)
           }
         });
+        // Function to scroll to the top
+        function scrollToTop() {
+          window.scrollTo(0, 0); // Scroll to the very top (x=0, y=0)
+        }
+
+        // Check if it's a mobile viewport (you can adjust the max-width as needed)
+        if (window.innerWidth <= 768) {
+          // Add a small delay to ensure all content is rendered before scrolling
+          setTimeout(scrollToTop, 100); // Scroll to top after 100ms
+        }
+
+        // Ensure the #home link in the navbar always works smoothly to top
+        const homeLink = document.querySelector('a[href="#home"]');
+        if (homeLink) {
+          homeLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor jump
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+            // Optionally, update the URL hash without scrolling again
+            history.pushState(null, null, '#home');
+          });
+        }
       });
     </script>
   </body>
