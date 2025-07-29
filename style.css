@@ -19,7 +19,7 @@ body, html {
 body {
   font-family: 'Playfair Display', serif;
   background: linear-gradient(to top left, #ffe4e1, #fff0f5);
-  color: #333;
+  color: #444;
   scroll-behavior: smooth;
 
   /* Font smoothing enhancements */
@@ -32,6 +32,7 @@ body {
 
 h3 {
   font-family: 'Playfair Display', serif;
+  color: #c2185b; /* Unify to match h2 for consistency */
 }
 
 #particles-js {
@@ -44,6 +45,8 @@ h3 {
 
 .navbar {
   background-color: #F8E8EE; /* Example: Very light blush pink */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05); /* Very subtle shadow, barely there */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth shadow transition */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,7 +61,7 @@ h3 {
   font-size: 2.5rem;
   color: #C2185B; /* Example: Deeper rose for better contrast */
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Slightly toned down shadow */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Lighter shadow for cleaner look */
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -93,8 +96,10 @@ h3 {
 }
 
 .navbar a:hover {
-  color: #c2185b; /* Bright rose on hover */
-  text-decoration: underline;
+  color: #e91e63; /* Use a slightly brighter pink on hover for pop */
+  text-decoration: none;
+  border-bottom: 2px solid #e91e63;
+  padding-bottom: 2px;
 }
 
 @media (max-width: 600px) {
@@ -109,29 +114,6 @@ h3 {
   .navbar ul {
     gap: 1rem;
   }
-}
-
-
-.night-mode {
-  background-color: #2c3e50; /* or any other dark color */
-  color: #ffffff; /* or any other light color */
-}
-
-#night-mode-toggle {
-  color: #ffffff; /* or any other light color */
-}
-
-.night-mode #night-mode-toggle {
-  color: #ffffff; /* or any other light color */
-}
-
-.normal-mode #night-mode-toggle {
-  color: #8b2c4a; /* or any other dark color */
-}
-
-.normal-mode {
-  background-color: #ffffff; /* or any other light color */
-  color: #2c3e50; /* or any other dark color */
 }
 
 .hero {
@@ -151,7 +133,7 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 240, 245, 0.3); /* soft blush pink overlay */
+  background-color: rgba(255, 240, 245, 0.15); /* Lighter pink overlay */
   z-index: 0;
 }
 
@@ -173,6 +155,7 @@ h3 {
   font-size: 3.5rem;
   font-weight: normal;
   color: #e91e63;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Slightly lighter shadow */
   margin-bottom: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -186,7 +169,7 @@ h3 {
   font-weight: bold;
   margin: 10px 0;
   display: block;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow */
   z-index: 3;
 }
 
@@ -269,7 +252,7 @@ section {
 h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 2.0rem;
-  color: #b85c5c;
+  color: #c2185b;
   margin-bottom: 1rem;
 }
 
@@ -301,10 +284,11 @@ h2 {
 
 .event {
   background: linear-gradient(to bottom right, #fff6e5, #ffe3ec);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #ffffff; /* Clean white background */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Lighter, subtle shadow */
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid #ffcad4;
+  border: 1px solid #ffe3ed; /* Very light, soft pink border */
   color: #333;
   transition: transform 0.3s ease;
   word-break: break-word;
@@ -350,12 +334,12 @@ h2 {
 
 
 .card {
-  background: #fff8fb;
-  border: 1px solid #ffcad4;
+  background-color: #ffffff; /* Clean white background */
+  border: 1px solid #ffe3ed; /* Very light, soft pink border */
   padding: 1.5rem;
   width: 280px;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(255, 202, 212, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Lighter, subtle shadow */
   transition: transform 0.3s ease;
   color: #333;
 }
@@ -364,12 +348,17 @@ h2 {
   transform: translateY(-5px);
 }
 
+.card a:hover {
+  color: #c2185b; /* Deeper pink on hover */
+}
+
 .card a {
   display: inline-block;
   margin-top: 8px;
-  color: #d35400;
-  font-weight: bold;
+  color: #e91e63; /* A vibrant pink for links, stands out on white */
+  font-weight: 600;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .guests {
@@ -401,12 +390,12 @@ h2 {
 }
 
 .guest-card {
-  background: #f9f9f9;
+  background-color: #ffffff; /* Clean white background */
   color: #222;
   padding: 1.5rem;
   border-radius: 12px;
   width: 280px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter, subtle shadow */
   text-align: left;
 }
 
@@ -418,7 +407,7 @@ h2 {
 
 .guest-card h3 {
   font-family: 'Great Vibes', cursive;
-  color: #c0392b;
+  color: #c2185b; /* A consistent main pink for these titles */
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -465,18 +454,18 @@ footer {
 }
 
 .count-box {
-  background: #fff0f5;
-  border: 2px solid #ffc0cb;
+  background-color: #ffffff; /* Clean white background */
+  border: 2px solid #ffe3ed; /* Very light, soft pink border */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Lighter, subtle shadow */
   padding: 1rem 1.2rem;
   border-radius: 12px;
   min-width: 80px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .count-box span {
   font-size: 2rem;
   font-weight: bold;
-  color: #c0392b;
+  color: #e91e63; /* Brighter pink for numbers */
   display: block;
 }
 
@@ -485,7 +474,7 @@ footer {
   font-family: 'Open Sans', sans-serif;
   margin-top: 0.3rem;
   display: block;
-  color: #555;
+  color: #777; /* Darker grey for readability */
 }
 
 /* Scrollable photo strip */
@@ -512,17 +501,144 @@ footer {
   text-align: center;
   font-family: 'Great Vibes', cursive;
   font-size: 1.6rem;
-  color: #c2185b; /* Deep rose pink */
+  color: #c2185b; /* Keep this prominent pink */
   margin: 20px;
   line-height: 1.5;
-  background: linear-gradient(45deg, #fff0f6, #ffe3e3);
+  background-color: #ffffff; /* Solid white background */
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter, subtle shadow */
 }
-
 
 button:focus {
   outline: 2px dashed #e91e63;
   outline-offset: 4px;
+}
+
+
+/* --- Night Mode Core Styles --- */
+/* These styles apply to the <body> when the 'night-mode' class is active */
+.night-mode {
+  background-color: #2c3e50; /* Main dark background for night mode */
+  color: #ffffff; /* Main light text color for night mode */
+  background-image: none; /* Remove the linear gradient in night mode */
+}
+
+/* --- Night Mode Styles for Specific Elements --- */
+
+/* Navbar in Night Mode */
+.night-mode .navbar {
+  background-color: #1a2b3c; /* A slightly darker shade for the navbar */
+}
+.night-mode .nav-logo,
+.night-mode .love-symbol {
+  color: #add8e6; /* Light blue/teal for logo/symbol */
+}
+.night-mode .navbar a {
+  color: #add8e6; /* Light blue for navigation links */
+}
+.night-mode .navbar a:hover {
+  color: #ffffff; /* White on hover */
+}
+
+/* Hero Section in Night Mode */
+/* This will darken your hero background image and make text light */
+.night-mode .hero::after {
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for the hero background image */
+}
+.night-mode .hero-content .highlight,
+.night-mode .hero-content h2,
+.night-mode .hero-content .names,
+.night-mode .hero-content p,
+.night-mode .countdown-wrapper h3.count-title {
+  color: #add8e6; /* Light blue/teal for hero text and countdown title */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8); /* Darker shadow for visibility */
+}
+
+/* General Section Headings in Night Mode */
+.night-mode section h2 {
+  color: #add8e6; /* Light blue/teal for all section titles */
+}
+
+/* Event Cards in Night Mode */
+.night-mode .event {
+  background: #2a3a4b; /* Darker background for event cards */
+  border-color: #3b506b; /* Darker border */
+  color: #ffffff; /* White text */
+}
+.night-mode .event h4 {
+  color: #add8e6; /* Light blue/teal for event titles */
+}
+
+/* Venue Cards in Night Mode */
+.night-mode .card {
+  background: #2a3a4b; /* Darker background for venue cards */
+  border-color: #3b506b;
+  color: #ffffff;
+}
+.night-mode .card h3 {
+  color: #add8e6;
+}
+.night-mode .card a {
+  color: #add8e6; /* Light blue/teal for location links */
+}
+
+/* Guest Cards in Night Mode */
+.night-mode .guest-card {
+  background: #2a3a4b; /* Darker background for guest cards */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  color: #ffffff;
+}
+.night-mode .guest-card h3 {
+  color: #add8e6; /* Light blue/teal for guest card titles */
+}
+
+/* Countdown Boxes in Night Mode */
+.night-mode .countdown-boxes .count-box {
+  background: #2a3a4b; /* Darker background for countdown boxes */
+  border-color: #3b506b;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.night-mode .count-box span {
+  color: #add8e6; /* Light blue/teal for numbers */
+}
+.night-mode .count-box label {
+  color: #cccccc; /* Lighter grey for labels */
+}
+
+/* Love Message in Night Mode */
+.night-mode .love-message {
+  background: linear-gradient(45deg, #1f2a3a, #2a3a4b); /* Darker gradient */
+  color: #add8e6; /* Light blue/teal */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer in Night Mode */
+.night-mode footer {
+  background-color: #1a2b3c; /* Match navbar background in night mode */
+  color: #ffffff;
+}
+
+/* Music Button in Night Mode */
+.night-mode .music-button button {
+  background: linear-gradient(135deg, #4b6a82, #6b8fa1); /* Darker gradient for button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.night-mode .music-button button.playing {
+  background: #4b6a82;
+  box-shadow: 0 0 12px #6b8fa1;
+}
+
+/* --- Night Mode Toggle Button Icon Colors --- */
+/* Add a transition to the toggle button for a smoother icon color change */
+#night-mode-toggle {
+    transition: color 0.5s ease;
+}
+/* Icon color when the page is in normal (day) mode */
+.normal-mode #night-mode-toggle {
+    color: #8b2c4a; /* Dark rose/maroon for good contrast on your light background */
+}
+/* Icon color when the page is in night mode */
+.night-mode #night-mode-toggle {
+    color: #add8e6; /* Light blue/teal for good contrast on dark background */
 }

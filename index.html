@@ -151,6 +151,7 @@
 
     <script>  
       document.addEventListener("DOMContentLoaded", function () {
+        // --- Music Player Logic ---
         const music = document.getElementById("bgMusic");
         const button = document.querySelector(".music-button button");
 
@@ -164,69 +165,7 @@
         document.addEventListener("click", playMusicOnClick);
 
         button.addEventListener("click", function (e) {
-          e.stopPropagation(); // Don't trigger page click event
-          if (music.muted) {
-            music.muted = false;
-            music.play();
-            button.textContent = "🔊";
-          } else {
-            music.muted = true;
-            button.textContent = "🔇";
-          }
-        });
-      });
-
-    const targetDate = new Date("2025-08-18T03:19:00").getTime();
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minsEl = document.getElementById("minutes");
-    const secsEl = document.getElementById("seconds");
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = targetDate - now;
-
-      if (diff <= 0) {
-        daysEl.textContent = "0";
-        hoursEl.textContent = "0";
-        minsEl.textContent = "0";
-        secsEl.textContent = "0";
-        clearInterval(intervalId); // Stop the interval once the countdown reaches 0
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const mins = Math.floor((diff / 1000 / 60) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-
-      daysEl.textContent = days.toString().padStart(2, '0'); // Add leading zero for single-digit numbers
-      hoursEl.textContent = hours.toString().padStart(2, '0');
-      minsEl.textContent = mins.toString().padStart(2, '0');
-      secsEl.textContent = secs.toString().padStart(2, '0');
-    }
-
-    updateCountdown();
-    const intervalId = setInterval(updateCountdown, 1000);
-
-      
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const music = document.getElementById("bgMusic");
-        const button = document.querySelector(".music-button button");
-
-        function playMusicOnClick() {
-          music.muted = false;
-          music.play().catch(() => {});
-          button.textContent = "🔊";
-          document.removeEventListener("click", playMusicOnClick);
-        }
-
-        document.addEventListener("click", playMusicOnClick);
-
-        button.addEventListener("click", function (e) {
-          e.stopPropagation(); // Don't trigger page click event
+          e.stopPropagation();
           if (music.muted) {
             music.muted = false;
             music.play();
@@ -237,7 +176,7 @@
           }
         });
 
-        // Countdown Logic
+        // --- Countdown Logic ---
         const targetDate = new Date("2025-08-18T03:19:00").getTime();
         const daysEl = document.getElementById("days");
         const hoursEl = document.getElementById("hours");
@@ -249,10 +188,10 @@
           const diff = targetDate - now;
 
           if (diff <= 0) {
-            daysEl.textContent = "0";
-            hoursEl.textContent = "0";
-            minsEl.textContent = "0";
-            secsEl.textContent = "0";
+            daysEl.textContent = "00";
+            hoursEl.textContent = "00";
+            minsEl.textContent = "00";
+            secsEl.textContent = "00";
             clearInterval(intervalId);
             return;
           }
@@ -271,7 +210,7 @@
         updateCountdown();
         const intervalId = setInterval(updateCountdown, 1000);
 
-        // Night Mode / Particles Logic
+        // --- Night Mode / Particles Logic ---
         const body = document.body;
         const nightModeToggle = document.getElementById("night-mode-toggle");
 
@@ -328,19 +267,22 @@
 
         // Initialize normal mode on page load
         body.classList.add("normal-mode");
-        nightModeToggle.innerHTML = '🌕'; // Moon icon initially for switching to night mode
-        initializeParticles(false); // Initialize particles for normal mode when the page loads
+        // *** CHANGE HERE: Sun icon for normal mode ***
+        nightModeToggle.innerHTML = '☀️';
+        initializeParticles(false); // Initialize particles for normal mode (hearts)
 
         nightModeToggle.addEventListener("click", function () {
           body.classList.toggle("night-mode");
           body.classList.toggle("normal-mode");
 
           if (body.classList.contains("night-mode")) {
-            nightModeToggle.innerHTML = '☀️'; // Sun icon for switching to normal mode
-            initializeParticles(true); // Initialize particles for night mode
+            // *** CHANGE HERE: Moon icon for night mode ***
+            nightModeToggle.innerHTML = '🌕';
+            initializeParticles(true); // Initialize particles for night mode (circles)
           } else {
-            nightModeToggle.innerHTML = '🌕'; // Moon icon for switching to night mode
-            initializeParticles(false); // Initialize particles for normal mode
+            // *** CHANGE HERE: Sun icon for normal mode ***
+            nightModeToggle.innerHTML = '☀️';
+            initializeParticles(false); // Initialize particles for normal mode (hearts)
           }
         });
       });
