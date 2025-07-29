@@ -22,7 +22,7 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#venue">Venue</a></li>
       </ul>
-      <button id="night-mode-toggle" style="background-color: transparent; border: none; color: #8b2c4a; font-size: 16px; cursor: pointer;">🌃 Night Mode</button>
+      <button id="night-mode-toggle" style="background-color: transparent; border: none; color: #8b2c4a; font-size: 16px; cursor: pointer;">🌕</button>
     </nav>
 
     <div class="music-button">
@@ -213,114 +213,117 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-  const body = document.body;
-  const nightModeToggle = document.getElementById("night-mode-toggle");
+        const body = document.body;
+        const nightModeToggle = document.getElementById("night-mode-toggle");
 
-  // Initialize normal mode
-  body.classList.add("normal-mode");
+        // Initialize normal mode
+        body.classList.add("normal-mode");
+        nightModeToggle.innerHTML = '🌕'; // moon icon for night mode
 
-  nightModeToggle.addEventListener("click", function () {
-    body.classList.toggle("night-mode");
-    body.classList.toggle("normal-mode");
+        nightModeToggle.addEventListener("click", function () {
+              body.classList.toggle("night-mode");
+              body.classList.toggle("normal-mode");
 
-    if (body.classList.contains("night-mode")) {
-      particlesJS("particles-js", {
-        particles: {
-          number: {
-            value: 100,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          shape: {
-            type: "circle"
-          },
-          color: {
-            value: "#ffffff"
-          },
-          opacity: {
-            value: 0.5,
-            random: true
-          },
-          size: {
-            value: 3,
-            random: true
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: false
-            },
-            onclick: {
-              enable: false
-            },
-            resize: true
-          }
-        },
-        retina_detect: true
-      });
-        } else {
-          particlesJS("particles-js", {
-            particles: {
-              number: {
-                value: 20,
-                density: {
-                  enable: true,
-                  value_area: 800
-                }
-              },
-              shape: {
-                type: "image",
-                image: {
-                  src: "https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG@master/black/png/32/heart.png",
-                  width: 32,
-                  height: 32
-                }
-              },
-              opacity: {
-                value: 0.8,
-                random: true
-              },
-              size: {
-                value: 16,
-                random: true
-              },
-              move: {
-                enable: true,
-                speed: 2,
-                direction: "top",
-                out_mode: "out"
+              if (body.classList.contains("night-mode")) {
+                nightModeToggle.innerHTML = '☀️'; // sun icon
+                particlesJS("particles-js", {
+                  particles: {
+                    number: {
+                      value: 100,
+                      density: {
+                        enable: true,
+                        value_area: 800
+                      }
+                    },
+                    shape: {
+                      type: "circle"
+                    },
+                    color: {
+                      value: "#ffffff"
+                    },
+                    opacity: {
+                      value: 0.5,
+                      random: true
+                    },
+                    size: {
+                      value: 3,
+                      random: true
+                    },
+                    move: {
+                      enable: true,
+                      speed: 1,
+                      direction: "none",
+                      random: true,
+                      straight: false,
+                      out_mode: "out",
+                      bounce: false
+                    }
+                  },
+                  interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                      onhover: {
+                        enable: false
+                      },
+                      onclick: {
+                        enable: false
+                      },
+                      resize: true
+                    }
+                  },
+                  retina_detect: true
+                });
+              } else {
+                nightModeToggle.innerHTML = '🌕'; // moon icon
+                particlesJS("particles-js", {
+                  particles: {
+                    number: {
+                      value: 20,
+                      density: {
+                        enable: true,
+                        value_area: 800
+                      }
+                    },
+                    shape: {
+                      type: "image",
+                      image: {
+                        src: "https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG@master/black/png/32/heart.png",
+                        width: 32,
+                        height: 32
+                      }
+                    },
+                    opacity: {
+                      value: 0.8,
+                      random: true
+                    },
+                    size: {
+                      value: 16,
+                      random: true
+                    },
+                    move: {
+                      enable: true,
+                      speed: 2,
+                      direction: "top",
+                      out_mode: "out"
+                    }
+                  },
+                  interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                      onhover: {
+                        enable: false
+                      },
+                      onclick: {
+                        enable: false
+                      },
+                      resize: true
+                    }
+                  },
+                  retina_detect: true
+                });
               }
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: {
-                onhover: {
-                  enable: false
-                },
-                onclick: {
-                  enable: false
-                },
-                resize: true
-              }
-            },
-            retina_detect: true
+            });
           });
-        }
-      });
-    });
     </script>
   </body>
 </html>

@@ -26,6 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smooth: always;
+  transition: background-color 0.5s, color 0.5s;
    
 }
 
@@ -42,7 +43,7 @@ h3 {
 }
 
 .navbar {
-  background-color: #C21E56;
+  background-color: #FF1D8D;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,12 +112,14 @@ h3 {
 }
 
 
-body.night-mode {
-  background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+.night-mode {
+  background-color: #2c3e50; /* or any other dark color */
+  color: #ffffff; /* or any other light color */
 }
 
-body.normal-mode {
-  background: linear-gradient(to top left, #ffe4e1, #fff0f5);
+.normal-mode {
+  background-color: #ffffff; /* or any other light color */
+  color: #2c3e50; /* or any other dark color */
 }
 
 .hero {
@@ -418,7 +421,7 @@ h2 {
 }
 
 footer {
-  background-color: #C21E56;
+  background-color: #FF1D8D;
   color: #555;
   text-align: center;
   padding: 1.5rem;
