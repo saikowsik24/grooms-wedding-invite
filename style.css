@@ -232,7 +232,7 @@ h3 {
 }
 
 .highlight {
-  font-family: 'Playfair Display', serif; /* Try using a font that's known for its consistency */
+  font-family: 'Great Vibes', cursive;
   font-size: 3.5rem;
   font-weight: normal;
   color: #e91e63;
@@ -310,6 +310,7 @@ section {
   padding: 60px 20px;
   text-align: center;
   background-color: transparent;
+  transition: background-color 0.5s ease; /* Smooth transition for background */
 }
 
 /* This rule doesn't do much on its own, section's transparent background is usually enough */
@@ -352,7 +353,6 @@ h2 {
 
 .event {
   background: linear-gradient(to bottom right, #fff6e5, #ffe3ec);
-  background-color: #ffffff; /* Clean white background */
   box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Lighter, subtle shadow */
   padding: 1.5rem;
   border-radius: 16px;
@@ -422,6 +422,7 @@ h2 {
   border-bottom: 1px solid #e91e63;
   padding: 60px 20px;
   text-align: center;
+  transition: background-color 0.5s ease; /* Smooth transition for background */
 }
 
 .guests h2 {
@@ -603,6 +604,11 @@ button:focus {
 }
 
 /* --- Night Mode Styles for Specific Elements --- */
+
+/* Add a solid background to all sections in night mode */
+.night-mode section {
+  background-color: #1f2a3a; /* A solid dark color for sections */
+}
 
 /* Navbar in Night Mode */
 .night-mode .navbar {
