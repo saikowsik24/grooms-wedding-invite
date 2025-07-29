@@ -47,7 +47,7 @@ h3 {
   background-color: #F8E8EE; /* Example: Very light blush pink */
   box-shadow: 0 1px 4px rgba(0,0,0,0.05); /* Very subtle shadow, barely there */
   transition: background-color 0.3s, box-shadow 0.3s; /* Smooth shadow transition */
-  display: flex-end;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -65,7 +65,6 @@ h3 {
   white-space: nowrap;
   display: flex;
   align-items: center;
-  margin-right: auto;
 }
 
 .initials {
@@ -87,7 +86,6 @@ h3 {
   display: flex;
   list-style: none;
   gap: 2rem;
-  margin-right: 1.5rem; /* Add some space between links and button */
 }
 
 .navbar a {
@@ -111,12 +109,12 @@ h3 {
     padding: 1rem;
   }
   .nav-logo {
-    margin-right: 0; /* Remove auto margin in mobile, let it center */
+    margin-right: 0; 
     margin-bottom: 1rem; /* Space below logo */
   }
   .navbar ul {
     gap: 1rem;
-    margin-right: 0; /* Reset margin for mobile */
+    margin-right: 0; 
     margin-bottom: 1rem; /* Space below links */
   }
 }
@@ -255,6 +253,10 @@ section {
   background-color: transparent;
 }
 
+.night-mode .couple {
+    background-color: transparent; /* Should inherit from body, but explicitly transparent here */
+}
+
 h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 2.0rem;
@@ -280,7 +282,6 @@ h2 {
   color: #c2185b;
   margin-bottom: 1rem;
   text-align: center;
-  color: inherit; /* Inherit color from parent or body */
 }
 
 .event-list {
@@ -369,7 +370,7 @@ h2 {
 }
 
 .guests {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   border-top: 1px solid #e91e63;
   border-bottom: 1px solid #e91e63;
   padding: 60px 20px;
@@ -568,6 +569,11 @@ button:focus {
   color: #add8e6; /* Light blue/teal for all section titles */
 }
 
+/* Couple-name also has proper night mode color */
+.night-mode .couple-name {
+    color: #add8e6;
+}
+
 /* Event Cards in Night Mode */
 .night-mode .event {
   background: #2a3a4b; /* Darker background for event cards */
@@ -592,6 +598,12 @@ button:focus {
 }
 
 /* Guest Cards in Night Mode */
+.night-mode .guests {
+    /* FIX: Set a solid dark background for the guests section in night mode */
+    background-color: #1f2a3a; /* A dark shade matching your gradient start */
+    border-color: #3b506b; /* Darker border */
+}
+\
 .night-mode .guest-card {
   background: #2a3a4b; /* Darker background for guest cards */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
