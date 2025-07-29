@@ -117,7 +117,7 @@ h3 {
 }
 /* Icon color when the page is in normal (day) mode) */
 .normal-mode #night-mode-toggle {
-  color: #3f3f3f; /* Very bright grey for the moon */
+  color: #5a5a5a; /* Very bright grey for the moon */
 }
 /* Icon color when the page is in night mode */
 .night-mode #night-mode-toggle {
